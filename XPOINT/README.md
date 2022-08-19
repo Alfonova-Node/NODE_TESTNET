@@ -176,15 +176,18 @@ If the above Command Error Change `$EVMOS_WALLET_ADDRESS` to `your Address`
 ## Create Validator
 ```
 evmosd tx staking create-validator \
-  --amount 1000000000000000000000apoint \
-  --from $WALLET \
-  --commission-max-change-rate "0.01" \
-  --commission-max-rate "0.2" \
-  --commission-rate "0.07" \
-  --min-self-delegation "1000000000000000000000" \
-  --pubkey  $(evmosd tendermint show-validator) \
-  --moniker $NODENAME \
-  --chain-id $EVMOS_CHAIN_ID
+--amount=1000000000000000000000apoint \
+--pubkey=$(evmosd tendermint show-validator) \
+--moniker="<your validator>" \
+--chain-id=point_10721-1 \
+--commission-rate="0.10" \
+--commission-max-rate="0.20" \
+--commission-max-change-rate="0.01" \
+--min-self-delegation="1000000000000000000000" \
+--gas="400000" \
+--gas-prices="0.025apoint" \
+--from=<your wallet name> \
+--keyring-backend file
   ```
   ## Staking, Delegation and Rewards
   Delegate stake
