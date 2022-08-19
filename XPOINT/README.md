@@ -234,11 +234,11 @@ evmosd tx staking create-validator \
   ```
   ## Node info
   Validator info
-  ``` strided status 2>&1 | jq .ValidatorInfo ```
+  ``` evmosd status 2>&1 | jq .ValidatorInfo ```
   Node info
-  ``` strided status 2>&1 | jq .NodeInfo ```
+  ``` evmosd status 2>&1 | jq .NodeInfo ```
   Show node id
-  ``` strided tendermint show-node-id ```
+  ``` evmosd tendermint show-node-id ```
  
  ## Service Management
  Check logs
