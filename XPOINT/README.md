@@ -156,8 +156,8 @@ Finally, use the wallet to send as much as you need from your fund address to th
 Now you have to wait for the node to be fully synchronized, because otherwise it won't find you.
 
 Once the node is fully synchronized, and you have some XPOINT to stake, check your balance on the node, you will see your balance in Metamask or you can check your balance with this command:
-``` evmosd query bank balances $EVMOS_WALLET_ADDRESS
-```
+``` evmosd query bank balances $EVMOS_WALLET_ADDRESS ```
+
 ## Create a Validator (Make sure the status is False and the balance is there)
 
 ### Check Status (If it is False and the Token has been Landing then Create Validator)
