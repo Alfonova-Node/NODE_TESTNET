@@ -234,19 +234,25 @@ evmosd tx staking create-validator \
   ```
   ## Node info
   Validator info
-  ``` evmosd status 2>&1 | jq .ValidatorInfo ```
+  ``` evmosd status 2>&1 | jq .ValidatorInfo
+  ```
   Node info
-  ``` evmosd status 2>&1 | jq .NodeInfo ```
+  ``` evmosd status 2>&1 | jq .NodeInfo
+  ```
   Show node id
   ``` evmosd tendermint show-node-id ```
  
  ## Service Management
  Check logs
- ``` journalctl -fu evmosd -o cat ```
+ ``` journalctl -fu evmosd -o cat
+ ```
  Start service
- ``` sudo systemctl start evmosd ```
+ ``` sudo systemctl start evmosd
+ ```
  Stop service
- ``` sudo systemctl stop evmosd ```
+ ``` sudo systemctl stop evmosd
+ ```
  Restart service
- ```sudo systemctl restart evmosd ```
+ ```sudo systemctl restart evmosd
+ ```
 
