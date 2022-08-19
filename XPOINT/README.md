@@ -1,8 +1,8 @@
 <p align="center">
   <img height="100" height="auto" src="https://user-images.githubusercontent.com/38981255/185550018-bf5220fa-7858-4353-905c-9bbd5b256c30.jpg">
 </p>
-## Supported OS
 
+## Supported OS
 - darwin/arm64
 - darwin/x86_64
 - linux/arm64
