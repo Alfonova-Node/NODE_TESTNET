@@ -170,7 +170,7 @@ Once the node is fully synchronized, and you have some XPOINT to stake, check yo
 ### Check Status (If it is False and the Token has been Landing then Create Validator)
 ``` evmosd status 2>&1 | jq .SyncInfo ```
 ### Check Ballances
-``` evmosd query bank balances $POINT_WALLET_ADDRESS ```
+``` evmosd query bank balances $EVMOS_WALLET_ADDRESS ```
 If the above Command Error Change `$EVMOS_WALLET_ADDRESS` to `your Address`
 
 ## Create Validator
@@ -244,9 +244,9 @@ evmosd tx staking create-validator \
  Check logs
  ``` journalctl -fu evmosd -o cat ```
  Start service
- ``` sudo systemctl start strided ```
+ ``` sudo systemctl start evmosd ```
  Stop service
- ``` sudo systemctl stop strided ```
+ ``` sudo systemctl stop evmosd ```
  Restart service
- ```sudo systemctl restart strided ```
+ ```sudo systemctl restart evmosd ```
 
