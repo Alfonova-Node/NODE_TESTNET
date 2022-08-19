@@ -244,15 +244,14 @@ evmosd tx staking create-validator \
  
  ## Service Management
  Check logs
- ``` journalctl -fu evmosd -o cat
- ```
+ `journalctl -fu evmosd -o cat`
+ 
  Start service
- ``` sudo systemctl start evmosd
- ```
+ `sudo systemctl start evmosd`
+ 
  Stop service
- ``` sudo systemctl stop evmosd
- ```
+ `sudo systemctl stop evmosd`
+ 
  Restart service
- ```sudo systemctl restart evmosd
- ```
+ `sudo systemctl restart evmosd`
 
