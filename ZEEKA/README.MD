@@ -7,23 +7,32 @@ sudo apt update && sudo apt upgrade -y
 sudo  apt  install  wget jq git libssl-dev cmake -y
 ```
 ### Install Rust
-```. <(wget -qO- https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/ZEEKA/rust.sh)
+```
+. <(wget -qO- https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/ZEEKA/rust.sh)
+```
+```
+source "$HOME/.cargo/env"
 ```
 
 ### Clone the repository with the node
-```git clone https://github.com/zeeka-network/bazuka
+```
+git clone https://github.com/zeeka-network/bazuka
 ```
 
 ### Go to the bazuka folder
-```cd bazuka
+```
+cd bazuka
 ```
 ### Install necessary dependencies
-```cargo build
 ```
-```cargo install --path .
+cargo build
+```
+```
+cargo install --path .
 ```
 ### Initialize the node
-```bazuka init --seed 'your seed phrase' --network debug --node 127.0 .0.1:8765
+```
+bazuka init --seed 'your seed phrase' --network debug --node 127.0 .0.1:8765
 ```
 
 ⠀### Create service file
@@ -56,5 +65,7 @@ EOF
  ```
  ### View logs
 
-```zeeka_log```
+```
+zeeka_log
+```
 
