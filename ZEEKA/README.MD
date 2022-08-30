@@ -5,19 +5,19 @@
 ### Install Rust
 ```. <(wget -qO- https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/ZEEKA/rust.sh)```
 
-⠀ ### Clone the repository with the node
-
+### Clone the repository with the node
 ```git clone https://github.com/zeeka-network/bazuka```
 
-⠀### Go to the bazuka folder
+### Go to the bazuka folder
 ```cd bazuka```
 
-⠀### Install necessary dependencies
+### Install necessary dependencies
 ```cargo build
-cargo install --path .```
-
-⠀### Initialize the node
-```bazuka init --seed 'your seed phrase' --network debug --node 127.0 .0.1:8765```
+cargo install --path .
+```
+### Initialize the node
+```bazuka init --seed 'your seed phrase' --network debug --node 127.0 .0.1:8765
+```
 
 ⠀### Create service file
 ``` sudo  tee  << EOF > /dev/null /etc/systemd/system/zeeka.service 
@@ -34,10 +34,10 @@ RestartSec=
 
 
 WantedBy=multi-user.target 
-EOF ```
+EOF 
+```
 
-⠀### Start the service
-
+### Start the service
 ```
  sudo systemctl daemon-reload
  sudo systemctl enable zeeka
@@ -47,7 +47,8 @@ EOF ```
  ```
  .  < ( wget -qO- https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/ZEEKA/insert_variable.sh ) -n zeeka_log -v "sudo journalctl -fn 100 -u zeeka" -a
  ```
- ###View logs
+ ### View logs
 
-```zeeka_log```
+```zeeka_log
+```
 
