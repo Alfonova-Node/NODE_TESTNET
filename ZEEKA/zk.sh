@@ -1,4 +1,5 @@
 #!/bin/bash
+cowsay -f dragon "UBUNTU | Linux For Human Being"
 
 echo "=================================================="
 echo "    / \  | |   |  ___/ _ \| \ | |/ _ \ \   / / \    ";
@@ -22,7 +23,8 @@ sudo apt-get install build-essential gdb -y
 
 echo -e "\e[1m\e[32m3. Installing Rupstup... \e[0m" && sleep 1
 # Instal Rupstup
-curl https://sh.rustup.rs -sSf | sh
+. <(wget -qO- https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/ZEEKA/rust.sh)
+source "$HOME/.cargo/env"
 
 echo -e "\e[1m\e[32m4. Clone Repositori... \e[0m" && sleep 1
 # download binary
