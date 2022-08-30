@@ -1,0 +1,11 @@
+nano /etc/systemd/system/zeeka.service
+ExecStart=`RUST_LOG=info which ..... --discord-handle “NAME_DISCORD”
+
+cd /bazuka
+
+git pull origin master
+cargo install --path .
+
+
+sudo systemctl daemon-reload
+sudo systemctl restart zeeka
