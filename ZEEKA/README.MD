@@ -32,7 +32,7 @@ cargo install --path .
 ```
 ### Initialize the node
 ```
-bazuka init --seed 'your seed phrase' --network debug --node 127.0 .0.1:8765
+bazuka init --seed 'your seed phrase' --network debug --node 127.0.0.1:8765
 ```
 
 ⠀### Create service file
