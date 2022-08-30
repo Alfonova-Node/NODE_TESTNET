@@ -57,11 +57,14 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
+Replace YOUR IP with your IP, and replace the discord-handle "YOUR DISCORD" with your discord user.
+
 ### Update Path
 ```
 cd bazuka
 git pull origin master
 cargo install --path .
+```
 
 ### Start the service
 ```
