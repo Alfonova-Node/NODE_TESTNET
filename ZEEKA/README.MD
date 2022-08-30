@@ -86,4 +86,7 @@ zeeka_log
 rustup self uninstall -y
 rm -rf bazuka
 ```
-<h1><b><i><u><font color="yellow">GOOD LUCK</b><br/></u><ur/><span>
+```
+console
+GOOD LUCK
+```
