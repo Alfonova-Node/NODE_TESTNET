@@ -2,11 +2,6 @@
   <img height="100" height="auto" src="https://avatars.githubusercontent.com/u/96166029?s=200&v=4">
 </p>
 
-## Install Automatic (Option 1)
-```
-wget -O zk.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/ZEEKA/zk.sh
-```
-## Install Manual (Option 2)
 ### Update packages
 ```
 sudo apt update && sudo apt upgrade -y
