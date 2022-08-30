@@ -69,4 +69,5 @@ EOF
 ```
 zeeka_log
 ```
-<span style="color: green"> Some green YANG ZORO BELUM D BUAT YA !!! </span>
+<font color="green"> ZORO BELUM D BUAT GUYS !!!!!  </font>
+
