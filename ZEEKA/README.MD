@@ -62,7 +62,7 @@ EOF
  ```
  ### Add a command to view the node log to the system as a variable
  ```
- .  < ( wget -qO- https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/ZEEKA/insert_variable.sh ) -n zeeka_log -v "sudo journalctl -fn 100 -u zeeka" -a
+ . <(wget -qO- https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/ZEEKA/insert_variable.sh) -n zeeka_log -v "sudo journalctl -fn 100 -u zeeka" -a
  ```
  ### View logs
 
