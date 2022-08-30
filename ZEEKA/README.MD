@@ -49,6 +49,5 @@ EOF
  ```
  ### View logs
 
-```zeeka_log
-```
+```zeeka_log```
 
