@@ -57,7 +57,7 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-Replace YOUR IP with your IP, and replace the discord-handle "YOUR DISCORD" with your discord user.
+Replace "YOUR IP" with your IP VPS, and replace the discord-handle "YOUR DISCORD" with your discord user.
 
 ### Update Path
 ```
