@@ -32,3 +32,4 @@ git pull origin master
 cargo install --path .
 
 
+echo '=============== SETUP FINISHED NEXT STEP CHECK GITHUB ==================='
