@@ -1,5 +1,4 @@
 #!/bin/bash
-cowsay -f dragon "UBUNTU | Linux For Human Being"
 
 echo "=================================================="
 echo "    / \  | |   |  ___/ _ \| \ | |/ _ \ \   / / \    ";
