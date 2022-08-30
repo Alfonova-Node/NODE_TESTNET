@@ -31,3 +31,4 @@ git clone https://github.com/zeeka-network/bazuka && cd bazuka
 git pull origin master
 cargo install --path .
 
+echo '=============== SETUP FINISHED NEXT STEP CHECK GITHUB ==================='
