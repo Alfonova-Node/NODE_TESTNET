@@ -1,6 +1,10 @@
 <p align="center">
   <img height="100" height="auto" src="https://avatars.githubusercontent.com/u/96166029?s=200&v=4">
 </p>
+### Install Auto
+```
+. <(wget -qO- https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/ZEEKA/zk.sh)
+```
 
 ### Update packages
 ```
