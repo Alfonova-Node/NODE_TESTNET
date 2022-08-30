@@ -1,8 +1,10 @@
 ### Update packages
-```sudo apt update && sudo apt upgrade -y
+```
+sudo apt update && sudo apt upgrade -y
 ```
 ### Install required packages
-```sudo  apt  install  wget jq git libssl-dev cmake -y
+```
+sudo  apt  install  wget jq git libssl-dev cmake -y
 ```
 ### Install Rust
 ```. <(wget -qO- https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/ZEEKA/rust.sh)
