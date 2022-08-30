@@ -85,6 +85,7 @@ zeeka_log
 ```
 rustup self uninstall -y
 rm -rf bazuka
+rm -rf zk.sh
 ```
 
 # GOOD LUCK
