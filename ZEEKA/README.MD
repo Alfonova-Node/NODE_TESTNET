@@ -35,7 +35,7 @@ cargo install --path .
 bazuka init --seed 'your seed phrase' --network debug --node 127.0.0.1:8765
 ```
 
-⠀### Create service file
+### Create service file
 ```
 sudo tee <<EOF >/dev/null /etc/systemd/system/zeeka.service
 [Unit]
