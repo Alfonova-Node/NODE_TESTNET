@@ -5,6 +5,7 @@
 ## Install Automatic
 ```
 wget -O zk.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/ZEEKA/zk.sh
+```
 
 ### Update packages
 ```
