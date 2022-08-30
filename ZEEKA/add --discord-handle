@@ -15,7 +15,7 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 
-cd /bazuka
+cd bazuka
 
 git pull origin master
 cargo install --path .
