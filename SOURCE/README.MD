@@ -20,10 +20,10 @@ Explorer :
 - 200GB of storage (SSD or NVME)
 - Permanent Internet connection (traffic will be minimal during testnet; 10Mbps will be plenty - for production at least 100Mbps is expected)
 
-## Set Sei Fullnode
+## Set Source Fullnode
 ## Auto Install (Option 1)
 ```
-wget -O sei.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/SEI/sei.sh && chmod +x sei.sh && ./sei.sh
+wget -O source.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/SOURCE/source.sh && chmod +x source.sh && ./source.sh
 ```
 ## Manual Installation (Option 2)
 ### Server preparation
