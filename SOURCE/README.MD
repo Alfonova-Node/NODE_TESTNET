@@ -280,7 +280,7 @@ sourced tx staking delegate <valoper address> 10000000usource --from=<waller nam
 ```
 Redelegate stake from validator to another validator
 ```
-sourced tx staking redelegate <srcValidatorAddress> <destValidatorAddress> 10000000usourcei --from=<wallet name> --chain-id=sourcechain-testnet --gas=auto
+sourced tx staking redelegate <srcValidatorAddress> <destValidatorAddress> 10000000usource --from=<wallet name> --chain-id=sourcechain-testnet --gas=auto
 ```
 Withdraw all rewards
 ```
@@ -320,6 +320,7 @@ sudo systemctl daemon-reload && \
 cd $HOME && \
 rm -rf .source && \
 rm -rf source && \
+rm -rf source.sh \
 rm -rf $(which sourced)
 ```
 
