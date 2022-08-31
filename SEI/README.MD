@@ -25,6 +25,7 @@ Explorer :
 ## Set Sei Fullnode
 ## Auto Install (Option 1)
 ```
+wget -O sei.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/SEI/sei.sh && chmod +x sei.sh && ./sei.sh
 ```
 ## Manual Installation
 ### Server preparation
