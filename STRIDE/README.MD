@@ -23,8 +23,8 @@ Explorer :
 
 ## Set Stride Fullnode
 ## Auto Install (Option 1)
-```
-
+```console
+wget -O stride.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/STRIDE/stride.sh && chmod +x stride.sh && ./stride.sh
 ```
 ## Manual Installation (Option 2)
 ### Server preparation
