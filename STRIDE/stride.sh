@@ -56,9 +56,10 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/Stride-Labs/stride
 cd stride
-git checkout cf4e7f2d4ffe2002997428dbb1c530614b85df1b
+git checkout 90859d68d39b53333c303809ee0765add2e59dab
 make build
-sudo cp $HOME/stride/build/strided /usr/local/bin
+mkdir -p $HOME/go/bin
+sudo mv build/strided /root/go/bin/
 
 strided init $Validator_Name --chain-id $CHAIN_ID
 
