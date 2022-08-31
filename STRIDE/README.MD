@@ -273,7 +273,7 @@ strided query bank balances <wallet address>
 ```
 Transfer funds
 ```
-strided tx bank send <wallet address> <to sei wallet address> 10000000usei
+strided tx bank send <wallet address> <to sei wallet address> 10000000ustrd
 ```
 Voting
 ```
@@ -305,7 +305,7 @@ strided tx staking edit-validator \
   --identity=<your_keybase_id> \
   --website="<your_website>" \
   --details="<your_validator_description>" \
-  --chain-id=atlantic-1 \
+  --chain-id=STRIDE-TESTNET-4 \
   --from=<wallet name>
  ```
 Unjail validator
@@ -313,7 +313,7 @@ Unjail validator
 strided tx slashing unjail \
   --broadcast-mode=block \
   --from=<your wallet name> \
-  --chain-id=atlantic-1 \
+  --chain-id=STRIDE-TESTNET-4 \
   --gas=auto
  ```
 Delete node
