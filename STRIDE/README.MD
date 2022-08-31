@@ -51,10 +51,9 @@ Build GO (one command)
 Installing the binaries (23.08.22)
  ```console 
 git clone https://github.com/Stride-Labs/stride.git && cd stride
-git checkout 90859d68d39b53333c303809ee0765add2e59dab
+git checkout cf4e7f2d4ffe2002997428dbb1c530614b85df1b
 make build
-mkdir -p $HOME/go/bin
-sudo mv build/strided /root/go/bin/
+sudo cp $HOME/stride/build/strided /usr/local/bin
 ```
 `strided version --long | head`
 + version: v0.4.1
