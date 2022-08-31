@@ -148,8 +148,8 @@ haqqd keys add <wallet name> --recover
 ```
 haqqd debug addr <wallet address>
 ```
-Get Faucet Token On Discord 
->- [Discord Official Sei](https://discord.gg/sei)
+Get Faucet Token 
+>- [ISLM Testnet Faucet](https://testedge.haqq.network/)
 
 ### Create Validator
 ```
