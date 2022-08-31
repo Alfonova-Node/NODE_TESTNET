@@ -1,5 +1,5 @@
 <p align="center">
-  <img height="300" height="auto" src="https://user-images.githubusercontent.com/50621007/169664551-39020c2e-fa95-483b-916b-c52ce4cb907c.png">
+  <img height="200" height="auto" src="https://user-images.githubusercontent.com/50621007/169664551-39020c2e-fa95-483b-916b-c52ce4cb907c.png">
 </p>
 
 # Sei Node Setup for Testnet — atlantic-1
