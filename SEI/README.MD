@@ -27,7 +27,7 @@ Explorer :
 ```
 wget -O sei.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/SEI/sei.sh && chmod +x sei.sh && ./sei.sh
 ```
-## Manual Installation
+## Manual Installation (Option 2)
 ### Server preparation
 Updating the repositories
 ```
