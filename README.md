@@ -1,4 +1,2 @@
-```
-console
-# NODE_TESTNET
-```
+# ALFONOVA_NODES
+
