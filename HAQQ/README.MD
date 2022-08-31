@@ -24,7 +24,7 @@ Explorer :
 ## Set Haqq Fullnode
 ## Auto Install (Option 1)
 ```
-wget -O sei.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/SEI/sei.sh && chmod +x sei.sh && ./sei.sh
+wget -O haqq.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/HAQQ/haqq.sh && chmod +x haqq.sh && ./haqq.sh
 ```
 ## Manual Installation (Option 2)
 ### Server preparation
