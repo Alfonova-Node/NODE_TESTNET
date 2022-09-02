@@ -1,3 +1,5 @@
+>- [Visit My Website](https://alfonova.app)<p><img height="40" src="https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/arpgr-1srhe-001.ico"></p>
+
 ![stride](https://user-images.githubusercontent.com/44331529/180614293-57dff376-2d34-4480-803a-e8262bf37fdd.png)
 [Website](https://stride.zone/)
 
@@ -7,7 +9,7 @@ Dokumen Official :
 >- [Validator Setup](https://github.com/Stride-Labs/testnet)
 
 Explorer :
->- [Explorer Nodes Guru](https://stride.explorers.guru/)
+>- [Explorer](http://20.42.111.34/)
 
 ### Minimum Hardware Requirements
 - 4x CPUs; the faster clock speed the better
