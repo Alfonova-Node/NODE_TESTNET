@@ -8,7 +8,7 @@ Dokumen Official :
 >- [Validator Setup](https://docs.seinetwork.io/nodes-and-validators/seinami-incentivized-testnet/joining-incentivized-testnet)
 
 Explorer :
->- [Explorer Nodes Guru](https://sei.explorers.guru/)
+>- [Explorer](http://20.42.111.34/))
 
 ### Minimum Hardware Requirements
 - 3x CPUs; the faster clock speed the better
