@@ -1,3 +1,4 @@
+>- [Visit My Website](https://alfonova.app)<p><img height="40" src="https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/arpgr-1srhe-001.ico"></p>
 <p align="center">
   <img height="100" height="auto" src="https://user-images.githubusercontent.com/38981255/185550018-bf5220fa-7858-4353-905c-9bbd5b256c30.jpg">
 </p>
@@ -17,6 +18,7 @@ To run mainnet or testnet validator nodes, you will need a machine with the foll
 - At least 32GB of memory (RAM)
 - At least 100mbps network bandwidth
 ```
+>- [Explorer](http://20.42.111.34/)
 
 ## Setting up vars
 Here you have to put name of your moniker (validator) that will be visible in explorer
