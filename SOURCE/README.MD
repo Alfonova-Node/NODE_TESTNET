@@ -1,12 +1,13 @@
+>- [Visit My Website](https://alfonova.app)<p><img height="40" src="https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/arpgr-1srhe-001.ico"></p>
 <p align="center">
-  <img height="200" height="auto" src="https://user-images.githubusercontent.com/44331529/183239082-09722b8d-9cc7-49a1-9d93-15ce3ab8d752.png">
+  <img height="100" height="auto" src="https://exp.nodeist.net/logos/src.png">
 </p>
 
 Dokumen Official :
 >- [Validator Setup](https://docs.sourceprotocol.io/smart-contracts-and-sourced-development/source-chain-testnet-setup)
 
 Explorer :
->- [Explorer](https://exp.nodeist.net/Source/staking)
+>- [Explorer](http://20.42.111.34/)
 
 ### Minimum Hardware Requirements
 - 2x CPUs; the faster clock speed the better
