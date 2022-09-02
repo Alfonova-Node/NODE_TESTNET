@@ -7,7 +7,7 @@ Dokumen Official :
 >- [Website](https://islamiccoin.net/)
 
 Explorer :
->- [Explorer](https://explorer.nodestake.top/haqq-testedge/staking)
+>- [Explorer]http://20.42.111.34/)
 
 ### Minimum Hardware Requirements
 - 4x CPUs; the faster clock speed the better
