@@ -1,5 +1,11 @@
+
+>- [Visit My Website](https://alfonova.app)<p><img height="40" src="https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/arpgr-1srhe-001.ico"></p>
+
+
+
+
 <p align="center">
-  <img height="200" height="auto" src="https://user-images.githubusercontent.com/50621007/169664551-39020c2e-fa95-483b-916b-c52ce4cb907c.png">
+  <img height="100" height="auto" src="https://user-images.githubusercontent.com/50621007/169664551-39020c2e-fa95-483b-916b-c52ce4cb907c.png">
 </p>
 
 # Sei Node Setup for Testnet — atlantic-1
@@ -8,7 +14,7 @@ Dokumen Official :
 >- [Validator Setup](https://docs.seinetwork.io/nodes-and-validators/seinami-incentivized-testnet/joining-incentivized-testnet)
 
 Explorer :
->- [Explorer](http://20.42.111.34/))
+>- [Explorer](http://20.42.111.34/)
 
 ### Minimum Hardware Requirements
 - 3x CPUs; the faster clock speed the better
