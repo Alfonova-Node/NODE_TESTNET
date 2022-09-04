@@ -5,24 +5,24 @@
 
 
 Dokumen Official :
->- [Website](https://islamiccoin.net/)
+>- [Website](https://github.com/TERITORI/teritori-chain/blob/main/testnet/teritori-testnet-v2/README.md)
 
 Explorer :
->- [Explorer](http://20.42.111.34/)
+>- [Explorer](https://teritori.explorers.guru/)
 
 ### Minimum Hardware Requirements
 - 4x CPUs; the faster clock speed the better
 - 4GB RAM
-- 80GB Disk
+- 100GB Disk
 - Permanent Internet connection (traffic will be minimal during testnet; 10Mbps will be plenty - for production at least 100Mbps is expected)
 
 ### Recommended Hardware Requirements
-- 4x CPUs; the faster clock speed the better
-- 8GB RAM
+- 8x CPUs; the faster clock speed the better
+- 16GB RAM
 - 200GB of storage (SSD or NVME)
 - Permanent Internet connection (traffic will be minimal during testnet; 10Mbps will be plenty - for production at least 100Mbps is expected)
 
-## Set Haqq Fullnode
+## Set Teritori Fullnode
 ## Auto Install (Option 1)
 ```
 wget -O haqq.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/HAQQ/haqq.sh && chmod +x haqq.sh && ./haqq.sh
@@ -51,74 +51,66 @@ Build GO (one command)
  ### Node installation
  Installing the binaries (11.07.22)
  ```
- cd $HOME && \
-git clone -b v1.0.3 https://github.com/haqq-network/haqq && \
-cd haqq && \
+git clone https://github.com/TERITORI/teritori-chain
+cd teritori-chain
+git checkout teritori-testnet-v2
 make install
 ```
-`haqqd -v`
-- version: 1.0.3
-- commit: 58215364d5be4c9ab2b17b2a80cf89f10f6de38a
+### Teritori Version
+```
+#Should return
+teritori-testnet-v2-0f4e5cb1d529fa18971664891a9e8e4c114456c6
+```
 
 Initializing the node to create the necessary configuration files
 ```
-haqqd init <moniker-name> --chain-id=haqq_53211-1
+teritorid init <moniker-name> --chain-id=teritori-testnet-v2
 ```
 Downloading Genesis
 ```
-curl -OL https://storage.googleapis.com/haqq-testedge-snapshots/genesis.json
-mv genesis.json $HOME/.haqqd/config/genesis.json
+wget https://raw.githubusercontent.com/TERITORI/teritori-chain/teritori-testnet-v2/genesis/genesis.json -O $HOME/.teritorid/config/genesis.json
 ```
-Let's check the genesis
-`sha256sum $HOME/.haqqd/config/genesis.json`
-- 9a7746dd6d4cc1e29f8a67759d90ef37af8bc78a7be3dd94538e94f42bc1f646 genesis.json
-
 ### Pruning (optional) one command
 ```
 pruning="custom" && \
 pruning_keep_recent="100" && \
 pruning_keep_every="0" && \
 pruning_interval="10" && \
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.haqqd/config/app.toml && \
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.haqqd/config/app.toml && \
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.haqqd/config/app.toml && \
-sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.haqqd/config/app.toml
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.teritorid/config/app.toml && \
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.teritorid/config/app.toml && \
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.teritorid/config/app.toml && \
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.teritorid/config/app.toml
 ```
 Indexer (optional) one command
 ```
 indexer="null" && \
-sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.haqqd/config/config.toml
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.teritorid/config/config.toml
 ```
 ### Set up the minimum gas price and Peers/Seeds/Filter peers
 ```
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0stake\"/;" ~/.haqqd/config/app.toml
-sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.haqqd/config/config.toml
-external_address=$(wget -qO- eth0.me) 
-sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.haqqd/config/config.toml
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0utori\"/;" ~/.teritorid/config/app.toml
+external_address=$(wget -qO- eth0.me)
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.teritorid/config/config.toml
 
-peers="e15e1867f68011f80f2763e6691c89c923bf2f24@78.46.16.236:41656"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.haqqd/config/config.toml
-
-seeds="74d8f92c37ffe4c6393b3718ca531da8f0bf0594@seed1.haqqd.services:26656"
-sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.haqqd/config/config.toml
-
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.haqqd/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.haqqd/config/config.toml
+peers="0dde2ae55624d822eeea57d1b5e1223b6019a531@176.9.149.15:26656,4d2ea61e6195ee4e449c1e6132cabce98f7d94e1@5.9.40.222:26656,bceb776975aab62bcfd501969c0e1a2734ed7c2e@176.9.19.162:26656"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.teritorid/config/config.toml
+seeds=""
+sed -i.bak -e "s/^seeds *=.*/seeds = \"$seeds\"/; s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.teritorid/config/config.toml
 ```
 ### Download addrbook
 ```
-wget -O $HOME/.haqqd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/haqq/addrbook.json"
+wget -O $HOME/.teritorid/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Teritori/addrbook.json"
 ```
 ### Create a service file
 ```
-sudo tee /etc/systemd/system/haqqd.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/teritorid.service > /dev/null <<EOF
 [Unit]
-Description=haqqd
+Description=Teritorid
 After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which haqqd) start
+ExecStart=$(which teritorid) start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
@@ -127,59 +119,54 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-### Download addrbook
-```
-wget -O $HOME/.agoric/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sei_Network/addrbook.json"
-```
 
 ### START SERVICE
 ```
-sudo systemctl daemon-reload && \
-sudo systemctl enable haqqd && \
-sudo systemctl restart haqqd && \
-sudo journalctl -u haqqd -f -o cat
+sudo systemctl daemon-reload
+sudo systemctl enable teritorid
+sudo systemctl restart teritorid
+sudo journalctl -u teritorid -f -o cat
 ```
 ### Create Wallet or Restore Wallet
 ```
-haqqd keys add <wallet name>
-  or
-haqqd keys add <wallet name> --recover
+teritorid keys add <walletname>
+teritorid keys add <walletname> --recover
 ```
 ### Check Set Wallet
 ```
-haqqd debug addr <wallet address>
+teritorid debug addr <wallet address>
 ```
 Get Faucet Token 
->- [ISLM Testnet Faucet](https://testedge.haqq.network/)
+>- [Teritori Faucet](https://discord.gg/zzJEmR8nhr)
 
 ### Create Validator
 ```
-haqqd tx staking create-validator \
---amount 1000000000000000000aISLM \
---from <walletName> \
---commission-max-change-rate "0.10" \
---commission-max-rate "0.20" \
---commission-rate "0.10" \
---min-self-delegation "1" \
+teritorid tx staking create-validator \
+--amount=1000000utori \
+--pubkey=$(teritorid tendermint show-validator) \
+--moniker="<moniker>" \
 --identity="" \
 --details="" \
 --website="" \
---pubkey $(haqqd tendermint show-validator) \
---moniker <Moniker> \
---chain-id haqq_53211-1 \
--y
+--chain-id="teritori-testnet-v2" \
+--commission-rate="0.10" \
+--commission-max-rate="0.20" \
+--commission-max-change-rate="0.1" \
+--min-self-delegation="1" \
+--fees 500utori \
+--from=<walletname> -y
 ```
 ### Get list of validators
 - For Active Validators
 ```
-haqqd q staking validators -o json --limit=3000 \
+teritorid q staking validators -o json --limit=3000 \
 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' \
 | jq -r '.tokens + " - " + .description.moniker' \
 | sort -gr | nl
 ```
 - For Inactive Validators
 ```
-haqqd q staking validators -o json --limit=3000 \
+teritorid q staking validators -o json --limit=3000 \
 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' \
 | jq -r '.tokens + " - " + .description.moniker' \
 | sort -gr | nl
@@ -188,115 +175,114 @@ haqqd q staking validators -o json --limit=3000 \
 ### Service management
 Check logs
 ```
-journalctl -fu haqqd -o cat
+journalctl -fu teritorid -o cat
 ```
 Start service
 ```
-sudo systemctl start haqqd
+sudo systemctl start teritorid
 ```
 Stop service
 ```
-sudo systemctl stop haqqd
+sudo systemctl stop teritorid
 ```
 Restart service
 ```
-sudo systemctl restart haqqd
+sudo systemctl restart teritorid
 ```
 ## Node info
 Synchronization info
 ```
-haqqd status 2>&1 | jq .SyncInfo
+teritorid status 2>&1 | jq .SyncInfo
 ```
 Validator info
 ```
-haqqd status 2>&1 | jq .ValidatorInfo
+teritorid status 2>&1 | jq .ValidatorInfo
 ```
 Node info
 ```
-haqqd status 2>&1 | jq .NodeInfo
+teritorid status 2>&1 | jq .NodeInfo
 ```
 Show node id
 ```
-haqqd tendermint show-node-id
+teritorid tendermint show-node-id
 ```
 ### Wallet operations
 List of wallets
 ```
-haqqd keys list
+teritorid keys list
 ```
 Recover wallet
 ```
-haqqd keys add <wallet name> --recover
+teritorid keys add <wallet name> --recover
 ```
 Delete wallet
 ```
-haqqd keys delete <wallet name>
+teritorid keys delete <wallet name>
 ```
 Backup Private Key
 ```
-haqqd keys export <wallet name> --unarmored-hex --unsafe
+teritorid keys export <wallet name> --unarmored-hex --unsafe
 ```
 Get wallet balance
 ```
-haqqd query bank balances <wallet address>
+teritorid query bank balances <wallet address>
 ```
 Transfer funds
 ```
-haqqd tx bank send <wallet address> <to sei wallet address> 10000000aISLM
+teritorid tx bank send <wallet address> <to teritori wallet address> 10000000utori
 ```
 Voting
 ```
-haqqd tx gov vote 1 yes --from <wallet name> --chain-id=haqq_53211-1
+teritorid tx gov vote 1 yes --from <wallet name> --chain-id=teritori-testnet-v2
 ```
 ### Staking, Delegation and Rewards
 Delegate stake
 ```
-haqqd tx staking delegate <valoper address> 10000000aISLM --from=<waller name> --chain-id=haqq_53211-1--gas=auto
+teritorid tx staking delegate <valoper address> 10000000utori --from=<waller name> --chain-id=teritori-testnet-v2 --gas=auto
 ```
 Redelegate stake from validator to another validator
 ```
-haqqd tx staking redelegate <srcValidatorAddress> <destValidatorAddress> 10000000aISLM --from=<wallet name> --chain-id=haqq_53211-1 --gas=auto
+teritorid tx staking redelegate <srcValidatorAddress> <destValidatorAddress> 10000000utori --from=<wallet name> --chain-id=teritori-testnet-v2 --gas=auto
 ```
 Withdraw all rewards
 ```
-haqqd tx distribution withdraw-all-rewards --from=<wallet name> --chain-id=haqq_53211-1 --gas=auto
+teritorid tx distribution withdraw-all-rewards --from=<wallet name> --chain-id=teritori-testnet-v2 --gas=auto
 ```
 Withdraw rewards with commision
 ```
-haqqd tx distribution withdraw-rewards <your valoper address> --from=<wallet name> --commission --chain-id=haqq_53211-1
+teritorid tx distribution withdraw-rewards <your valoper address> --from=<wallet name> --commission --chain-id=teritori-testnet-v2
 ```
 
 ### Validator Management
 Edit validator
 ```
-haqqd tx staking edit-validator \
+teritorid tx staking edit-validator \
   --moniker=<your moniker> \
   --identity=<your_keybase_id> \
   --website="<your_website>" \
   --details="<your_validator_description>" \
-  --chain-id=haqq_53211-1 \
+  --chain-id=teritori-testnet-v2 \
   --from=<wallet name>
  ```
 Unjail validator
 ```
-haqqd tx slashing unjail \
+teritorid tx slashing unjail \
   --broadcast-mode=block \
   --from=<your wallet name> \
-  --chain-id=haqq_53211-1 \
+  --chain-id=teritori-testnet-v2 \
   --gas=auto
  ```
 Delete node
 This commands will completely remove node from server. Use at your own risk!
 ```
-sudo systemctl stop haqqd && \
-sudo systemctl disable haqqd && \
-rm /etc/systemd/system/haqqd.service && \
+sudo systemctl stop teritorid && \
+sudo systemctl disable teritorid && \
+rm /etc/systemd/system/teritorid.service && \
 sudo systemctl daemon-reload && \
 cd $HOME && \
-rm -rf .haqqd && \
-rm -rf haqq && \
-rm -rf haqq.sh \
-rm -rf $(which haqqd)
+rm -rf .teritorid && \
+rm -rf teritori-chain && \
+rm -rf $(which teritorid)
 ```
 
 
