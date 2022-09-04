@@ -58,11 +58,11 @@ make install
 ```
 ### Teritori Version
 ```
-#Should return
-teritori-testnet-v2-0f4e5cb1d529fa18971664891a9e8e4c114456c6
+teritorid version
 ```
+teritori-testnet-v2-0f4e5cb1d529fa18971664891a9e8e4c114456c6
 
-Initializing the node to create the necessary configuration files
+### Initializing the node to create the necessary configuration files
 ```
 teritorid init <moniker-name> --chain-id=teritori-testnet-v2
 ```
@@ -283,6 +283,7 @@ cd $HOME && \
 rm -rf .teritorid && \
 rm -rf teritori-chain && \
 rm -rf $(which teritorid)
+rm -rf teri.sh
 ```
 
 
