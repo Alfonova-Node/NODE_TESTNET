@@ -25,7 +25,7 @@ Explorer :
 ## Set Teritori Fullnode
 ## Auto Install (Option 1)
 ```
-wget -O haqq.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/HAQQ/haqq.sh && chmod +x haqq.sh && ./haqq.sh
+wget -O teri.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/TERITORI/teri.sh && chmod +x teri.sh && ./teri.sh
 ```
 ## Manual Installation (Option 2)
 ### Server preparation
