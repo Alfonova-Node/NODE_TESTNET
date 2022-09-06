@@ -97,7 +97,7 @@ rm -rf zk.sh
 
 ### If you get error when check log you can try this:
 <p align="center">
-  <img height="200" height="auto" src="https://ibb.co/ZKBCrwB">
+  <img height="200" height="auto" src="https://i.ibb.co/y56JCM6/msg-1789191181-1499.jpg">
 </p>
 
 ```console
