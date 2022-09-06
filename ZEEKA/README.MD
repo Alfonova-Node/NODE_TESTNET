@@ -96,6 +96,10 @@ rm -rf zk.sh
 ```
 
 ### If you get error when check log you can try this:
+<p align="center">
+  <img height="200" height="auto" src="https://ibb.co/ZKBCrwB">
+</p>
+
 ```console
 cd bazuka && git pull origin master && cargo build && cargo install --path .
 ```
