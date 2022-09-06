@@ -95,4 +95,24 @@ rm -rf bazuka
 rm -rf zk.sh
 ```
 
+### If you get error when check log you can try this:
+```console
+cd bazuka && git pull origin master && cargo build && cargo install --path .
+```
+Then Delete
+``` console
+rm -rf ~/.bazuka-debug а 
+rm -rf /~/.bazuka-debug
+```
+Restart
+```console
+sudo systemctl daemon-reload
+sudo systemctl enable zeeka
+sudo systemctl restart zeeka
+ ```
+ Check log
+ ```
+ zeeka_log
+```
+
 # GOOD LUCK
