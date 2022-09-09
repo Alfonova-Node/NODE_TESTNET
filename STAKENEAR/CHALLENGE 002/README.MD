@@ -233,7 +233,7 @@ To become a validator and enter the set of active validators, you must at least 
 Check the running status of the validator node. If the Validator appears, then the pool has been selected in the current validators list.
 
 ## Continue to Challenge 003
-
+[Mount Staking Pool](https://github.com/Agus1224/NODE_TESTNET/tree/main/STAKENEAR/CHALLENGE%20003)
 
 
 
