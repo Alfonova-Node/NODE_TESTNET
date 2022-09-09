@@ -27,7 +27,7 @@ Use Grafana default credentials:
 ## Dashboard screenshots
 -  Create NEAR general dashboard.
 
-![Screenshot 1](https://i.ibb.co/3vNdzHb/msg-1789191181-1516.jpg)
+![Screenshot 1](https://i.ibb.co/9v6WCns/msg-1789191181-1520.jpg)
 
 - Create or reconfigure the existing dashboard for monitoring CPU, RAM, file systems, disks, and network statistics.
 
