@@ -94,3 +94,4 @@ near validators next | grep xx.factory.shardnet.near
 
 ## Continue to Challenge 002
 
+[Setup Wallet and Run Validator](https://github.com/Agus1224/NODE_TESTNET/tree/main/STAKENEAR/CHALLENGE%20002)
