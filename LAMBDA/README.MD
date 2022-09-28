@@ -186,6 +186,9 @@ lambdavm tx staking create-validator \
   --gas="300000" \
   --gas-prices="0.025ulamb" \
   --from=$WALLET \
+  --identity=<your_keybase_id> \
+  --website="<your_website>" \
+  --details="<your_validator_description>" \
   --broadcast-mode block
 ```
 
@@ -213,7 +216,25 @@ You will see a key there, you can identify your node among other validators usin
 ```bash
 lambdavm query tendermint-validator-set
 ```
-
+Check your validator key
+```bash
+[[ $(lambdavm q staking validator $HYPERSIGN_VALOPER_ADDRESS -oj | jq -r .consensus_pubkey.key) = $(hid-noded status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "\n\e[1m\e[32mTrue\e[0m\n" || echo -e "\n\e[1m\e[31mFalse\e[0m\n"
+```
+## Get list of validators
+- For Active Validators
+```bash
+lambdavm q staking validators -o json --limit=3000 \
+| jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' \
+| jq -r '.tokens + " - " + .description.moniker' \
+| sort -gr | nl
+```
+- For Inactive Validators
+```bash
+lambdavm q staking validators -o json --limit=3000 \
+| jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' \
+| jq -r '.tokens + " - " + .description.moniker' \
+| sort -gr | nl
+```
 ## Useful Commands
 Check Logs
 ```bash
@@ -253,4 +274,5 @@ sudo rm /etc/systemd/system/lambdavm* -rf
 sudo rm $(which lambdavm) -rf
 sudo rm $HOME/.lambdavm -rf
 sudo rm $HOME/lambdavm -rf
+sudo rm -rf lambda.sh
 sed -i '/lambda
