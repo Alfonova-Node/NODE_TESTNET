@@ -50,6 +50,8 @@ cline push action inery.token issue '["YourAccountName", "5000.0000 TEST", "Issu
 cline push action inery.token transfer '["YourAccountName", "DestinationWalletName", "Amount CurrencyCode", "Here you go 1 TEST for free :) "]' -p YourWalletName
 
 -------- example: send some tokens to 10 different accounts.
+```
+```bash
 cline push action inery.token transfer '["YourAccountName", "riandwiyandi", "1.0000 TEST", "Here Is 1 TEST for you bro "]' -p YourAccountName
 cline push action inery.token transfer '["YourAccountName", "alfonova", "1.0000 TEST", "Here Is 1 TEST for you bro "]' -p YourAccountName
 cline push action inery.token transfer '["YourAccountName", "pramonoutomo", "1.0000 TEST", "Here Is 1 TEST for you bro "]' -p YourAccountName
