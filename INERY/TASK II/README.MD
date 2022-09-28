@@ -49,8 +49,17 @@ cline push action inery.token issue '["YourAccountName", "5000.0000 TEST", "Issu
 ```bash
 cline push action inery.token transfer '["YourAccountName", "DestinationWalletName", "Amount CurrencyCode", "Here you go 1 TEST for free :) "]' -p YourWalletName
 
--------- example: 
+-------- example: send some tokens to 10 different accounts.
+cline push action inery.token transfer '["YourAccountName", "riandwiyandi", "1.0000 TEST", "Here Is 1 TEST for you bro "]' -p YourAccountName
+cline push action inery.token transfer '["YourAccountName", "alfonova", "1.0000 TEST", "Here Is 1 TEST for you bro "]' -p YourAccountName
 cline push action inery.token transfer '["YourAccountName", "pramonoutomo", "1.0000 TEST", "Here Is 1 TEST for you bro "]' -p YourAccountName
+cline push action inery.token transfer '["YourAccountName", "jambul.inery", "1.0000 TEST", "Here Is 1 TEST for you bro "]' -p YourAccountName
+cline push action inery.token transfer '["YourAccountName", "arief", "1.0000 TEST", "Here Is 1 TEST for you bro "]' -p YourAccountName
+cline push action inery.token transfer '["YourAccountName", "armz", "1.0000 TEST", "Here Is 1 TEST for you bro "]' -p YourAccountName
+cline push action inery.token transfer '["YourAccountName", "asphxwzrd", "1.0000 TEST", "Here Is 1 TEST for you bro "]' -p YourAccountName
+cline push action inery.token transfer '["YourAccountName", "away", "1.0000 TEST", "Here Is 1 TEST for you bro "]' -p YourAccountName
+cline push action inery.token transfer '["YourAccountName", "bintangnl", "1.0000 TEST", "Here Is 1 TEST for you bro "]' -p YourAccountName
+cline push action inery.token transfer '["YourAccountName", "blacktokyoo", "1.0000 TEST", "Here Is 1 TEST for you bro "]' -p YourAccountName
 ```
 ## don't forget to send your token to me to show your love :) my account: `alfonova`
 
