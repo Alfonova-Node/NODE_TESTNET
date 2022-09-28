@@ -155,7 +155,7 @@ lambdavm keys list --keyring-backend file
 ```
 To get private key of validator wallet (SAVE IT SOMEWHERE SAFE!)
 ```bash
-haqqd keys export $WALLET --unarmored-hex --unsafe
+lambdavm keys export $WALLET --unarmored-hex --unsafe
 ```
 ## Safe wallet Info
 ```bash
