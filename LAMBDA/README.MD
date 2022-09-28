@@ -202,6 +202,23 @@ lambdavm tx slashing unjail \
   --fees=5000ulamb \
   --gas=500000
 ```
+## Staking, Delegation and Rewards
+- Delegate stake
+```bash
+lambdavm tx staking delegate $LAMBDA_VALOPER_ADDRESS 10000000ulamb --from=$WALLET --chain-id=$LAMBDA_CHAIN_ID --gas=auto
+```
+- Redelegate stake from validator to another validator
+```bash
+lambdavm tx staking redelegate <srcValidatorAddress> <destValidatorAddress> 10000000ulamb --from=$WALLET --chain-id=$LAMBDA_CHAIN_ID --gas=auto
+```
+- Withdraw all rewards
+```bash
+lambdavm tx distribution withdraw-all-rewards --from=$WALLET --chain-id=$LAMBDA_CHAIN_ID --gas=auto
+```
+- Withdraw rewards with commision
+```bash
+lambdavm tx distribution withdraw-rewards $LAMBDA_VALOPER_ADDRESS --from=$WALLET --commission --chain-id=$LAMBDA_CHAIN_ID
+```
 ## Monitoring your validator
 
 Check TX HASH ( Which <txhash> is your txhash from the transaction
