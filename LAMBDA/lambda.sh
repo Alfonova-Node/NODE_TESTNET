@@ -54,7 +54,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 #INSTALL
 cd $HOME && \
 git clone https://github.com/LambdaIM/lambdavm.git && \
-cd haqq && \
+cd lambdavm && \
 make build && \
 sudo cp $HOME/lambdavm/build/lambdavm /usr/local/bin
 
