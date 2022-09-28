@@ -52,10 +52,10 @@ go version
 
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
-cd $HOME && \
-git clone https://github.com/LambdaIM/lambdavm.git && \
-cd lambdavm && \
-make build && \
+cd $HOME
+git clone https://github.com/LambdaIM/lambdavm.git
+cd lambdavm
+make build
 sudo cp $HOME/lambdavm/build/lambdavm /usr/local/bin
 
 
