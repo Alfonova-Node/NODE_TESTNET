@@ -18,9 +18,9 @@
  - At least 100mbps network bandwidth
 
 # Auto Install (Option 1)
-
-
-
+```bash
+wget -O lambda.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/LAMBDA/lambda.sh && chmod +x lambda.sh && ./lambda.sh
+```
 # Manual Installation (Option 2)
 ## Setting up vars
 Here you have to put name of your moniker (validator) that will be visible in explorer
