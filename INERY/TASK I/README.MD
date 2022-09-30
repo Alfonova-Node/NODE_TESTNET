@@ -148,7 +148,7 @@ Check Wallet balance using this command:
 ```bash
 cline get currency balance inery.token ACCOUNT_NAME
 ```
-For removing nodes (uninstall) go to `inery.setup/inery.node/` and execute `/stop.sh` script
+For removing nodes (uninstall) go to `inery.setup/inery.node/` and execute `./stop.sh` script
 
 To resume blockchain protocol execute `start.sh` script
 
