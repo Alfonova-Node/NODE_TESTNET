@@ -99,7 +99,7 @@ scroll down to MASTER ACCOUNT and replace placeholders
 ```
 Make sure you change AccountName, PublicKey,PrivateKey and IP based on your Inery Testnet Dashboard.
 
-Save it (ctrl+S), Type "Y" and exit (ctrl+X)
+`(ctrl+X)` and Press `y`to `Exit`
 
 - Create New Screen
 ```bash
