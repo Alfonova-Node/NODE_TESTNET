@@ -110,7 +110,8 @@ screen -R inery
 ./ine.py --master
 ```
 - CTRL+A+D to exit screen.
-```cd ~/inery-node/inery.setup/master.node
+```
+cd ~/inery-node/inery.setup/master.node
 chmod +x start.sh
 ./start.sh
 ```
