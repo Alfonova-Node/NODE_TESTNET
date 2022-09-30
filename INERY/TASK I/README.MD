@@ -75,7 +75,7 @@ chmod +x ine.py
 ```
 - export path to local os environment for inery binaries
 ```bash
-/ine.py --export
+./ine.py --export
 ```
 - refresh path variable
 ```bash
