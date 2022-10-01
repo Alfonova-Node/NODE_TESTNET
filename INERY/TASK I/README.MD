@@ -153,7 +153,7 @@ cline get currency balance inery.token ACCOUNT_NAME
 ```
 For removing nodes (uninstall) go to `inery.node/inery.setup/master.node` and execute `./stop.sh` script
 
-To resume blockchain protocol execute `start.sh` script
+To resume blockchain protocol execute `./start.sh` script
 
 To remove blockchain with all data from local machine go to `inery.node/inery.setup/master.node` and execute `./clean.sh` script
 
