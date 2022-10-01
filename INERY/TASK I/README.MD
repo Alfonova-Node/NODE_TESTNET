@@ -98,6 +98,9 @@ scroll down to MASTER ACCOUNT and replace placeholders
 }
 ```
 Make sure you change AccountName, PublicKey,PrivateKey and IP based on your Inery Testnet Dashboard.
+PEER_ADDREES Use IP PRIVATE
+
+`hostname -i`
 
 `(ctrl+X)` and Press `y`to `Exit`
 
