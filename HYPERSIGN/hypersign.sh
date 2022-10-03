@@ -57,6 +57,10 @@ git clone https://github.com/hypersign-protocol/hid-node.git
 cd hid-node
 make install
 
+# config
+hid-noded config chain-id $CHAIN_ID
+hid-noded config keyring-backend test
+
 # init
 hid-noded init $Validator_Name --chain-id $CHAIN_ID
 
