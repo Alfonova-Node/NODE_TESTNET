@@ -154,14 +154,14 @@ echo -e "\e[1m\e[35mSOON\e[0m"
 break
 ;;
 "Delete Node")
-sudo systemctl stop lambdavm && \
-sudo systemctl disable lambdavm && \
-rm /etc/systemd/system/lambdavm.service && \
+sudo systemctl stop hid-noded && \
+sudo systemctl disable hid-noded && \
+rm /etc/systemd/system/hid-noded.service && \
 sudo systemctl daemon-reload && \
 cd $HOME && \
-rm -rf .lambdavm && \
-rm -rf lambdavm && \
-rm -rf $(which lambdavm)
+rm -rf .hid-node && \
+rm -rf hid-node && \
+rm -rf $(which hid-noded)
 
 break
 ;;
