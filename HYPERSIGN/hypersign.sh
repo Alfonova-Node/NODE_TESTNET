@@ -38,7 +38,7 @@ echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
 
-echo -e "        \e[1m\e[32m2. Installing GO--> \e[0m" && sleep 1
+echo -e "\e[1m\e[32m2. Installing GO--> \e[0m" && sleep 1
 #INSTALL GO
 ver="1.18.3" && \
 cd $HOME && \
@@ -50,20 +50,18 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 
-echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
+echo -e "\e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
 git clone https://github.com/hypersign-protocol/hid-node.git
 cd hid-node
 make install
 
-hid-noded config chain-id $HYPERSIGN_CHAIN_ID
-hid-noded config keyring-backend test
+# init
+hid-noded init $NODENAME --chain-id $HYPERSIGN_CHAIN_ID
 
+# download genesis and addrbook
 wget -qO $HOME/.hid-node/config/genesis.json "https://raw.githubusercontent.com/hypersign-protocol/networks/master/testnet/jagrat/final_genesis.json"
-
-
-echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
 
 # set peers and seeds
 SEEDS=""
@@ -129,7 +127,7 @@ read Wallet
 echo export Wallet=${Wallet} >> $HOME/.bash_profile
 source ~/.bash_profile
 hid-noded keys add $Wallet
-echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE!!!!!!!!!SAVE!!!!!!!!!!!!!!!!\e[0m"
+echo -e "\e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE!!!!!!!!!SAVE!!!!!!!!!!!!!!!!\e[0m"
 
 break
 ;;
@@ -155,7 +153,7 @@ break
 ;;
 "UPDATE")
 hid-noded version
-echo -e "      \e[1m\e[35mSOON\e[0m"
+echo -e "\e[1m\e[35mSOON\e[0m"
 
 break
 ;;
