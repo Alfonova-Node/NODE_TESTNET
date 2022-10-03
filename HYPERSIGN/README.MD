@@ -312,6 +312,3 @@ sudo rm /etc/systemd/system/hid-noded* -rf
 sudo rm $(which hid-noded) -rf
 sudo rm $HOME/.hid-noded -rf
 sudo rm $HOME/hid-noded -rf
-sudo rm -rf hid-node.sh
-sed -i '/hid-node
-
