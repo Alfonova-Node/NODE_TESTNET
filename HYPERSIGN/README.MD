@@ -29,7 +29,7 @@ Like any Cosmos-SDK chain, the hardware requirements are pretty modest.
 
 # Auto Install (Option 1)
 ```bash
-N/A
+wget -O hypersign.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/HYPERSIGN/hypersign.sh && chmod +x hypersign.sh && ./hypersign.sh
 ```
 # Manual Installation (Option 2)
 ## Setting up vars
