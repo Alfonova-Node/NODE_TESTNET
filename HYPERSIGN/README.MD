@@ -311,4 +311,6 @@ sudo systemctl disable hid-noded
 sudo rm /etc/systemd/system/hid-noded* -rf
 sudo rm $(which hid-noded) -rf
 sudo rm $HOME/.hid-noded -rf
-sudo rm $HOME/hid-noded -rf
+sudo rm -rf hypersign.sh
+
+
