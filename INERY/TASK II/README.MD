@@ -52,7 +52,7 @@ cline push action inery.token transfer '["YourAccountName", "DestinationWalletNa
 -------- example: send some tokens to 10 different accounts.
 ```
 ```bash
-cline push action inery.token transfer '["YourAccountName", "riandwiyandi", "1.0000 TEST", "Here Is 1 TEST for you bro "]' -p YourAccountName
+cline push action inery.token transfer '["YourAccountName", "inery", "1.0000 TEST", "Here Is 1 TEST for you bro "]' -p YourAccountName
 cline push action inery.token transfer '["YourAccountName", "alfonova", "1.0000 TEST", "Here Is 1 TEST for you bro "]' -p YourAccountName
 cline push action inery.token transfer '["YourAccountName", "pramonoutomo", "1.0000 TEST", "Here Is 1 TEST for you bro "]' -p YourAccountName
 cline push action inery.token transfer '["YourAccountName", "jambul.inery", "1.0000 TEST", "Here Is 1 TEST for you bro "]' -p YourAccountName
