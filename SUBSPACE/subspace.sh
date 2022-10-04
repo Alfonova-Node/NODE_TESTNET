@@ -1,10 +1,5 @@
 #!/bin/bash
 
-while true
-do
-
-# Logo
-
 curl -s https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/logo_ALFONOVA | bash
 
 sleep 2
