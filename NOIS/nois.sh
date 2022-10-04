@@ -61,6 +61,7 @@ mv out/noisd $HOME/go/bin/
 # config
 noisd config chain-id $CHAIN_ID
 noisd config keyring-backend test
+
 # init
 noisd init $Validator_Name --chain-id $CHAIN_ID
 
@@ -117,7 +118,7 @@ sudo systemctl restart noisd
 
 echo '=============== SETUP FINISHED ==================='
 echo -e 'Congratulations:        \e[1m\e[32mSUCCESSFUL NODE INSTALLATION\e[0m'
-echo -e 'To check logs:        \e[1m\e[33mjournalctl -u haqqd -f -o cat\e[0m'
+echo -e 'To check logs:        \e[1m\e[33mjournalctl -u noisd -f -o cat\e[0m'
 echo -e "To check sync status: \e[1m\e[35mcurl -s localhost:26657/status\e[0m"
 
 break
@@ -129,7 +130,7 @@ echo "_|-_|-_|-_|-_|-_|-_|"
 read Wallet
 echo export Wallet=${Wallet} >> $HOME/.bash_profile
 source ~/.bash_profile
-haqqd keys add $Wallet
+noisd keys add $Wallet
 echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE!!!!!!!!!SAVE!!!!!!!!!!!!!!!!\e[0m"
 
 break
