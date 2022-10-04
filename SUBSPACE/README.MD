@@ -43,8 +43,8 @@ To create polkadot wallet:
 Full node doesn't store the history and state of the whole blockchain, only last 1024 blocks
 ### Option 1 (automatic)
 You can setup your Subspace full node in few minutes by using automated script below
-```
-N/A
+```bash
+wget -O subspace.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/SUBSPACE/subspace.sh && chmod +x subspace.sh && ./subspace.sh
 ```
 
 ### Option 2 (manual)
