@@ -124,7 +124,7 @@ After everything is setup, you have to register and after approve it your accoun
 
 - Create Wallet
 ```bash
-cd;  cline wallet create --file defaultWallet.txt
+cd;  cline wallet create --file YOUR_WALLET_NAME.txt
 ```
 - If your wallet has password, you need to unlock it first
 ```bash
