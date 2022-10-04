@@ -92,7 +92,7 @@ scroll down to MASTER ACCOUNT and replace placeholders
     "NAME": "AccountName",
     "PUBLIC_KEY": "PublicKey",
     "PRIVATE_KEY": "PrivateKey",
-    "PEER_ADDRESS": "IP:9010",
+    "PEER_ADDRESS": "IP_PRIVATE:9010",
     "HTTP_ADDRESS": "0.0.0.0:8888",
     "HOST_ADDRESS": "0.0.0.0:9010"
 }
