@@ -21,11 +21,11 @@ tail -f $inerylog | ccze -A
 ```
 - First your master node will start fully synchronizing blocks. you will see like this
 
-![img](./img/sync_true.jpg)
+![img](https://github.com/jambulmerah/guide-testnet/raw/main/inery/img/sync_true.jpg)
 
 - If the block is fully synced you will see something like this
 
-![img](./img/sync_false.jpg)
+![img](https://github.com/jambulmerah/guide-testnet/raw/main/inery/img/sync_false.jpg)
 
 ## Reg master node as producer block
 After the block is fully synced, continue to register as a block producer
@@ -56,4 +56,4 @@ tail -f $inerylog | ccze -A | grep $IneryAcc
 ```
 after a few minutes you will see logs like this
 
-![img](./img/block_produced.jpg)
+![img](https://github.com/jambulmerah/guide-testnet/raw/main/inery/img/block_produced.jpg)
