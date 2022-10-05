@@ -69,7 +69,7 @@ cd empowerchain/chain && \
 make install && \
 empowerd version --long | head
 
-empowerd init $Validator_Name --chain-id $CHAIN_ID
+empowerd init $NODENAME --chain-id $EMPOWER_CHAIN_ID
 
 rm -rf $HOME/.empowerchain/config/genesis.json && cd $HOME/.empowerchain/config && wget https://raw.githubusercontent.com/empowerchain/empowerchain/main/testnets/altruistic-1/genesis.json
 empowerd tendermint unsafe-reset-all --home $HOME/.empowerchain
