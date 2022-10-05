@@ -27,21 +27,10 @@ case $opt in
 echo "*********************"
 echo -e "\e[1m\e[35m		Lets's begin\e[0m"
 echo "*********************"
-echo -e "\e[1m\e[32m	Enter your Validator_Name:\e[0m"
+echo -e "\e[1m\e[32m	Enter your node name:\e[0m"
 echo "_|-_|-_|-_|-_|-_|-_|"
-read Validator_Name
+read node name
 echo "_|-_|-_|-_|-_|-_|-_|"
-echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
-echo export CHAIN_ID="altruistic-1" >> $HOME/.bash_profile
-source ~/.bash_profile
-
-echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
-
-# set vars
-if [ ! $NODENAME ]; then
-	read -p "Enter node name: " NODENAME
-	echo 'export NODENAME='$NODENAME >> $HOME/.bash_profile
-fi
 
 if [ ! $WALLET ]; then
 	echo "export WALLET=wallet" >> $HOME/.bash_profile
