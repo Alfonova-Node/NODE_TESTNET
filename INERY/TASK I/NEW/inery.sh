@@ -9,7 +9,7 @@ bold="\e[1m"
 italic="\e[3m"
 reset="\e[m"
 # logo
-curl -s https://raw.githubusercontent.com/jambulmerah/guide-testnet/main/script/logo.sh | bash
+curl -s https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/logo_ALFONOVA | bash
 sleep 2
 # Set account
 echo -e "$bold$hijau 1. Set account... $reset"
