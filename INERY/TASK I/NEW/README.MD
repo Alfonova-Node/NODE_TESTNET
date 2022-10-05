@@ -8,7 +8,7 @@
 
 ## Auto installation 
 ```
-wget -O inery.sh https://raw.githubusercontent.com/jambulmerah/guide-testnet/main/inery/inery.sh && bash inery.sh
+wget -O inery.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/INERY/TASK%20I/NEW/inery.sh && bash inery.sh
 ```
 
 ### Post installation
