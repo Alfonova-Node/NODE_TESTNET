@@ -56,12 +56,12 @@ N/A
 ### Create wallet
 To create new wallet you can use command below. Don’t forget to save the mnemonic
 ```bash
-empowerd keys add $WALLET
+empowerd keys add $Wallet
 ```
 
 (OPTIONAL) To recover your wallet using seed phrase
 ```bash
-empowerd keys add $WALLET --recover
+empowerd keys add $Wallet --recover
 ```
 
 To get current list of wallets
@@ -72,8 +72,8 @@ empowerd keys list
 ### Save wallet info
 Add wallet and valoper address into variables 
 ```bash
-EMPOWER_WALLET_ADDRESS=$(empowerd keys show $WALLET -a)
-EMPOWER_VALOPER_ADDRESS=$(empowerd keys show $WALLET --bech val -a)
+EMPOWER_WALLET_ADDRESS=$(empowerd keys show $Wallet -a)
+EMPOWER_VALOPER_ADDRESS=$(empowerd keys show $Wallet --bech val -a)
 echo 'export NOIS_WALLET_ADDRESS='${EMPOWER_WALLET_ADDRESS} >> $HOME/.bash_profile
 echo 'export EMPOWER_VALOPER_ADDRESS='${EMPOWER_VALOPER_ADDRESS} >> $HOME/.bash_profile
 source $HOME/.bash_profile
@@ -89,7 +89,7 @@ To request a faucet grant:
 $request <YOUR_WALLET_ADDRESS> altruistic-1
 ```
 ### Create validator
-Before creating validator please make sure that you have at least 1 mpwr (1 mpwr is equal to 1000000 umpwr) and your node is synchronized
+Before creating validator please make sure that you have at least 1 mpwr (1 mpwr is equal to 1000000umpwr) and your node is synchronized
 
 To check your wallet balance:
 ```
@@ -101,17 +101,17 @@ To create your validator run command below
 ```bash
 empowerd tx staking create-validator \
   --amount 100000000umpwr \
-  --from $WALLET \
+  --from $Wallet \
   --commission-max-change-rate "0.01" \
   --commission-max-rate "0.2" \
   --commission-rate "0.07" \
   --min-self-delegation "1" \
   --pubkey  $(empowerd tendermint show-validator) \
-  --moniker $NODENAME \
+  --moniker $Validator_Name \
   --identity=<your_keybase_id> \
   --website="<your_website>" \
   --details="<your_validator_description>" \
-  --chain-id $EMPOWER_CHAIN_ID
+  --chain-id $CHAIN_ID
 ```
 
 ### Check your validator key
@@ -175,12 +175,12 @@ empowerd keys list
 
 Recover wallet
 ```
-empowerd keys add $WALLET --recover
+empowerd keys add $Wallet --recover
 ```
 
 Delete wallet
 ```
-empowerd keys delete $WALLET
+empowerd keys delete $Wallet
 ```
 
 Get wallet balance
@@ -195,28 +195,28 @@ empowerd tx bank send $EMPOWER_WALLET_ADDRESS <TO_EMPOWER_WALLET_ADDRESS> 100000
 
 ### Voting
 ```bash
-empowerd tx gov vote 1 yes --from $WALLET --chain-id=$EMPOWER_CHAIN_ID
+empowerd tx gov vote 1 yes --from $Wallet --chain-id=$CHAIN_ID
 ```
 
 ### Staking, Delegation and Rewards
 Delegate stake
 ```bash
-empowerd tx staking delegate $EMPOWER_VALOPER_ADDRESS 10000000umpwr --from=$WALLET --chain-id=$EMPOWER_CHAIN_ID --gas=auto
+empowerd tx staking delegate $EMPOWER_VALOPER_ADDRESS 10000000umpwr --from=$Wallet --chain-id=$CHAIN_ID --gas=auto
 ```
 
 Redelegate stake from validator to another validator
 ```bash
-empowerd tx staking redelegate <srcValidatorAddress> <destValidatorAddress> 10000000umpwr --from=$WALLET --chain-id=$EMPOWER_CHAIN_ID --gas=auto
+empowerd tx staking redelegate <srcValidatorAddress> <destValidatorAddress> 10000000umpwr --from=$Wallet --chain-id=$CHAIN_ID --gas=auto
 ```
 
 Withdraw all rewards
 ```
-empowerd tx distribution withdraw-all-rewards --from=$WALLET --chain-id=$EMPOWER_CHAIN_ID --gas=auto
+empowerd tx distribution withdraw-all-rewards --from=$Wallet --chain-id=$CHAIN_ID --gas=auto
 ```
 
 Withdraw rewards with commision
 ```
-empowerd tx distribution withdraw-rewards $EMPOWER_VALOPER_ADDRESS --from=$WALLET --commission --chain-id=$EMPOWER_CHAIN_ID
+empowerd tx distribution withdraw-rewards $EMPOWER_VALOPER_ADDRESS --from=$Wallet --commission --chain-id=$CHAIN_ID
 ```
 
 ### Validator management
@@ -224,8 +224,8 @@ Unjail validator
 ```bash
 empowerd tx slashing unjail \
   --broadcast-mode=block \
-  --from=$WALLET \
-  --chain-id=$EMPOWER_CHAIN_ID \
+  --from=$Wallet \
+  --chain-id=$CHAIN_ID \
   --gas=auto
 ```
 
