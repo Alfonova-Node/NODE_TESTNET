@@ -9,19 +9,6 @@ curl -s https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/logo_ALFONO
 
 # Menu
 
-# Menu
-
-#!/bin/bash
-
-while true
-do
-
-# Logo
-
-curl -s https://raw.githubusercontent.com/obajay/nodes-Guides/main/logo_1 | bash
-
-# Menu
-
 PS3='Select an action: '
 options=(
 "Install Node"
