@@ -14,7 +14,6 @@ curl -s https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/logo_ALFONO
 PS3='Select an action: '
 options=(
 "Install Node"
-"Create wallet"
 "Check node logs"
 "Synchronization via StateSync"
 "Synchronization via SnapShot"
@@ -118,18 +117,6 @@ echo '=============== SETUP FINISHED ==================='
 echo -e 'Congratulations:        \e[1m\e[32mSUCCESSFUL NODE INSTALLATION\e[0m'
 echo -e 'To check logs:        \e[1m\e[33mjournalctl -u empowerd -f -o cat\e[0m'
 echo -e "To check sync status: \e[1m\e[35mcurl -s localhost:26657/status\e[0m"
-
-break
-;;
-"Create wallet")
-echo "_|-_|-_|-_|-_|-_|-_|"
-echo -e "      \e[1m\e[35m Your WalletName:\e[0m"
-echo "_|-_|-_|-_|-_|-_|-_|"
-read Wallet
-echo export Wallet=${Wallet} >> $HOME/.bash_profile
-source ~/.bash_profile
-empowerd keys add $Wallet
-echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE!!!!!!!!!SAVE!!!!!!!!!!!!!!!!\e[0m'"
 
 break
 ;;
