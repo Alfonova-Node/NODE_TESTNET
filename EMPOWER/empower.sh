@@ -34,7 +34,8 @@ read Validator_Name
 echo "_|-_|-_|-_|-_|-_|-_|"
 echo export Validator_Name=$Validator_Name >> $HOME/.bash_profile
 echo export CHAIN_ID="altruistic-1" >> $HOME/.bash_profile
-echo export Wallet="wallet" >> $HOME/.bash_profile
+read Wallet
+echo export Wallet=${Wallet} >> $HOME/.bash_profile
 source ~/.bash_profile
 
 echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
