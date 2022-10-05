@@ -11,6 +11,17 @@ curl -s https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/logo_ALFONO
 
 # Menu
 
+#!/bin/bash
+
+while true
+do
+
+# Logo
+
+curl -s https://raw.githubusercontent.com/obajay/nodes-Guides/main/logo_1 | bash
+
+# Menu
+
 PS3='Select an action: '
 options=(
 "Install Node"
@@ -32,11 +43,14 @@ echo -e "\e[1m\e[32m	Enter your Validator_Name:\e[0m"
 echo "_|-_|-_|-_|-_|-_|-_|"
 read Validator_Name
 echo "_|-_|-_|-_|-_|-_|-_|"
-echo export Validator_Name=$Validator_Name >> $HOME/.bash_profile
+echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
 echo export CHAIN_ID="altruistic-1" >> $HOME/.bash_profile
-read Wallet
-echo export Wallet=${Wallet} >> $HOME/.bash_profile
 source ~/.bash_profile
+
+if [ ! $Wallet ]; then
+	echo "export Wallet=wallet" >> $HOME/.bash_profile
+fi
+source $HOME/.bash_profile
 
 echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
 #UPDATE APT
@@ -100,12 +114,14 @@ sudo tee /etc/systemd/system/empowerd.service > /dev/null <<EOF
 [Unit]
 Description=EmpowerChain Node
 After=network.target
+
 [Service]
 User=$USER
 Type=simple
 ExecStart=$(which empowerd) start
 Restart=on-failure
 LimitNOFILE=65535
+
 [Install]
 WantedBy=multi-user.target
 EOF
@@ -152,6 +168,7 @@ cd $HOME && \
 rm -rf .empowerchain && \
 rm -rf empowerchain && \
 rm -rf $(which empowerd)
+rm -rf empower.sh
 
 break
 ;;
