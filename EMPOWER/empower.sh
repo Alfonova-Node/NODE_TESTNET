@@ -36,6 +36,28 @@ echo export CHAIN_ID="altruistic-1" >> $HOME/.bash_profile
 source ~/.bash_profile
 
 echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
+
+# set vars
+if [ ! $NODENAME ]; then
+	read -p "Enter node name: " NODENAME
+	echo 'export NODENAME='$NODENAME >> $HOME/.bash_profile
+fi
+
+if [ ! $WALLET ]; then
+	echo "export WALLET=wallet" >> $HOME/.bash_profile
+fi
+echo "export EMPOWER_CHAIN_ID=altruistic-1" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+
+echo '================================================='
+echo -e "Your node name: \e[1m\e[32m$NODENAME\e[0m"
+echo -e "Your wallet name: \e[1m\e[32m$WALLET\e[0m"
+echo -e "Your chain name: \e[1m\e[32m$EMPOWER_CHAIN_ID\e[0m"
+echo '================================================='
+sleep 2
+
+echo -e "\e[1m\e[32m1. Updating packages... \e[0m" && sleep 1
+
 #UPDATE APT
 sudo apt update && sudo apt upgrade -y && \
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
