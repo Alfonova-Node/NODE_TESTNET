@@ -29,7 +29,7 @@ Like any Cosmos-SDK chain, the hardware requirements are pretty modest.
 ### Option 1 (automatic)
 You can setup your nois fullnode in few minutes by using automated script below. It will prompt you to input your validator node name!
 ```
-N/A
+wget -O empower.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/EMPOWER/empower.sh && chmod +x empower.sh && ./empower.sh
 ```
 
 ### Option 2 (manual)
