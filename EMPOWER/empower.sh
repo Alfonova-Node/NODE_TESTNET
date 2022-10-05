@@ -12,6 +12,7 @@ curl -s https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/logo_ALFONO
 PS3='Select an action: '
 options=(
 "Install Node"
+"Create wallet"
 "Check node logs"
 "Synchronization via StateSync"
 "Synchronization via SnapShot"
@@ -33,11 +34,6 @@ echo "_|-_|-_|-_|-_|-_|-_|"
 echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
 echo export CHAIN_ID="altruistic-1" >> $HOME/.bash_profile
 source ~/.bash_profile
-
-if [ ! $Wallet ]; then
-	echo "export Wallet=wallet" >> $HOME/.bash_profile
-fi
-source $HOME/.bash_profile
 
 echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
 #UPDATE APT
@@ -101,14 +97,12 @@ sudo tee /etc/systemd/system/empowerd.service > /dev/null <<EOF
 [Unit]
 Description=EmpowerChain Node
 After=network.target
-
 [Service]
 User=$USER
 Type=simple
 ExecStart=$(which empowerd) start
 Restart=on-failure
 LimitNOFILE=65535
-
 [Install]
 WantedBy=multi-user.target
 EOF
@@ -122,6 +116,9 @@ echo '=============== SETUP FINISHED ==================='
 echo -e 'Congratulations:        \e[1m\e[32mSUCCESSFUL NODE INSTALLATION\e[0m'
 echo -e 'To check logs:        \e[1m\e[33mjournalctl -u empowerd -f -o cat\e[0m'
 echo -e "To check sync status: \e[1m\e[35mcurl -s localhost:26657/status\e[0m"
+
+read Wallet
+echo export Wallet=${Wallet} >> $HOME/.bash_profile
 
 break
 ;;
