@@ -33,7 +33,7 @@ N/A
 ```
 
 ### Option 2 (manual)
-You can follow [manual guide](https://github.com/Agus1224/NODE_TESTNET/blob/main/NOIS/manual_install.md) if you better prefer setting up node manually
+You can follow [manual guide](https://github.com/Agus1224/NODE_TESTNET/tree/main/EMPOWER) if you better prefer setting up node manually
 
 ## Post installation
 
