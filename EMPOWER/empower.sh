@@ -9,6 +9,8 @@ curl -s https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/logo_ALFONO
 
 # Menu
 
+# Menu
+
 PS3='Select an action: '
 options=(
 "Install Node"
@@ -27,26 +29,15 @@ case $opt in
 echo "*********************"
 echo -e "\e[1m\e[35m		Lets's begin\e[0m"
 echo "*********************"
-echo -e "\e[1m\e[32m	Enter your node name:\e[0m"
+echo -e "\e[1m\e[32m	Enter your Validator_Name:\e[0m"
 echo "_|-_|-_|-_|-_|-_|-_|"
-read node name
+read Validator_Name
 echo "_|-_|-_|-_|-_|-_|-_|"
+echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
+echo export CHAIN_ID="altruistic-1" >> $HOME/.bash_profile
+source ~/.bash_profile
 
-if [ ! $WALLET ]; then
-	echo "export WALLET=wallet" >> $HOME/.bash_profile
-fi
-echo "export EMPOWER_CHAIN_ID=altruistic-1" >> $HOME/.bash_profile
-source $HOME/.bash_profile
-
-echo '================================================='
-echo -e "Your node name: \e[1m\e[32m$NODENAME\e[0m"
-echo -e "Your wallet name: \e[1m\e[32m$WALLET\e[0m"
-echo -e "Your chain name: \e[1m\e[32m$EMPOWER_CHAIN_ID\e[0m"
-echo '================================================='
-sleep 2
-
-echo -e "\e[1m\e[32m1. Updating packages... \e[0m" && sleep 1
-
+echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
 #UPDATE APT
 sudo apt update && sudo apt upgrade -y && \
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
@@ -69,7 +60,7 @@ cd empowerchain/chain && \
 make install && \
 empowerd version --long | head
 
-empowerd init $NODENAME --chain-id $EMPOWER_CHAIN_ID
+empowerd init $Validator_Name --chain-id $CHAIN_ID
 
 rm -rf $HOME/.empowerchain/config/genesis.json && cd $HOME/.empowerchain/config && wget https://raw.githubusercontent.com/empowerchain/empowerchain/main/testnets/altruistic-1/genesis.json
 empowerd tendermint unsafe-reset-all --home $HOME/.empowerchain
@@ -108,14 +99,12 @@ sudo tee /etc/systemd/system/empowerd.service > /dev/null <<EOF
 [Unit]
 Description=EmpowerChain Node
 After=network.target
-
 [Service]
 User=$USER
 Type=simple
 ExecStart=$(which empowerd) start
 Restart=on-failure
 LimitNOFILE=65535
-
 [Install]
 WantedBy=multi-user.target
 EOF
