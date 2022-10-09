@@ -166,4 +166,7 @@ cline push action $IneryAccname update '[ 1,  "My first Record Modified"]' -p $I
 ```
 
 - `destroy` action
+```bash
+cline push action $IneryAccname destroy [1] -p $IneryAccname -j
+```
 
