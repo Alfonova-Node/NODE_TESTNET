@@ -70,6 +70,31 @@ git clone https://github.com/LambdaIM/lambdavm.git
 cd lambdavm
 make install
 ```
+
+## State Sync (Optional)
+```bash
+SNAP_RPC="https://rpc.lambda.nodestake.top:443"
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+
+sudo systemctl stop lambdavm
+lambdavm tendermint unsafe-reset-all --home ~/.lambdavm/
+
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" ~/.lambdavm/config/config.toml
+
+more ~/.lambdavm/config/config.toml | grep 'rpc_servers'
+more ~/.lambdavm/config/config.toml | grep 'trust_height'
+more ~/.lambdavm/config/config.toml | grep 'trust_hash'
+
+sudo systemctl restart lambdavm
+journalctl -u lambdavm -f -o cat
+```
 ## Config app
 ```bash
 lambdavm config chain-id $LAMBDA_CHAIN_ID
