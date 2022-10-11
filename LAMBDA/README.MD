@@ -36,7 +36,7 @@ echo "export NODENAME=$NODENAME" >> $HOME/.bash_profile
 if [ ! $WALLET ]; then
 	echo "export WALLET=wallet" >> $HOME/.bash_profile
 fi
-echo "export LAMBDA_CHAIN_ID=lambdatest_92001-1" >> $HOME/.bash_profile
+echo "export LAMBDA_CHAIN_ID=lambdatest_92000-1" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
@@ -68,8 +68,7 @@ fi
 ```bash
 git clone https://github.com/LambdaIM/lambdavm.git
 cd lambdavm
-make build
-sudo cp $HOME/lambdavm/build/lambdavm /usr/local/bin
+make install
 ```
 ## Config app
 ```bash
@@ -84,21 +83,19 @@ lambdavm init $NODENAME --chain-id $LAMBDA_CHAIN_ID
 
 ## Download genesis
 ```bash
-wget https://raw.githubusercontent.com/LambdaIM/testnets/main/lambdatest_92001-1/genesis.json
+wget https://raw.githubusercontent.com/LambdaIM/mainnet/main/lambda_92000-1/genesis.json
 mv genesis.json ~/.lambdavm/config/
 ```
 
-## Set seeds and peers
+## Set Peers
 ```bash
-SEEDS="6cf8b733252f6d9590010abe6f1dfbb9620f60f0@18.143.13.243:26656"
-PEERS="6cf8b733252f6d9590010abe6f1dfbb9620f60f0@18.143.13.243:26656"
-sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.lambdavm/config/config.toml
+peers="2c4f8e193fd10ab3a2bc919b484fd1c78eceffb3@13.213.214.88:26656,b772a0a8a8ee52c12ff0995ebb670a17db930489@54.225.36.85:26656,277b04415ee88113c304cc3970c88542d6d8f5d3@51.79.91.32:26656,a4ad9857ac5efdd75ec94875b19dd2f0bf562bde@47.75.111.113:26656,13e0e58efbb50df4dc5d39263bda1e432fe204f7@13.229.162.168:26656,ed4fd7dafd7df21f7152d38ee729ec33f505793d@54.254.224.222:26656,53e1c5f1783e839b1b1b51ae57ed2f05b9cdb4f3@13.229.27.15:26656,829503936e022119ce5e9cebf23c8e3a694c70f7@34.159.41.156:26656,d475be798a3b8d9eceb56b5cb276ff75d515cb7b@38.242.215.240:26656,d5bc2c509d730b5211f1e2f4cc95ffbbb6eb6944@194.163.164.52:26656,975afec2ce27ef21eea9d512f68eac8487680b09@135.181.72.187:12123,5a7e747884d496aec70495a767431410edb02167@149.102.139.69:26656,7f07d54901170270d7e7568481867535a363a1d5@65.108.129.104:26656,b029580f30c612176c81df200cf724836bba93c5@49.235.92.21:26656,b2cfe9fa02d93f3fa27cdb45272b5dcf3a075985@138.201.141.76:04656,bdeb4b00fe23900b323a3040a30b81e3c8f82803@23.88.69.167:26989"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.lambdavm/config/config.toml
 ```
 
 ## Set minimum gas price and timeout commit
 ```bash
-sed -i -e "s/^timeout_commit *=.*/timeout_commit = \"2s\"/" $HOME/.lambdavm/config/config.toml
-sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0001ulamb\"/" $HOME/.lambdavm/config/app.toml
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.01ulamb\"/;" $HOME/.lambdavm/config/app.toml
 ```
 
 ## Create Service
@@ -107,14 +104,12 @@ sudo tee /etc/systemd/system/lambdavm.service > /dev/null <<EOF
 [Unit]
 Description=lambdavm
 After=network-online.target
-
 [Service]
 User=$USER
-ExecStart=$(which lambdavm) start --home $HOME/.lambdavm
+ExecStart=$(which lambdavm) start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
-
 [Install]
 WantedBy=multi-user.target
 EOF
@@ -175,7 +170,7 @@ lambdavm query bank balances $LAMBDA_WALLET_ADDRESS
 To create a validator with 1 LAMB delegation use this command below :
 ```bash
 lambdavm tx staking create-validator \
-  --amount=1000000000000000000ulamb \
+  --amount=2000000000000000000ulamb \
   --pubkey=$(lambdavm tendermint show-validator) \
   --moniker=$NODENAME \
   --chain-id=$LAMBDA_CHAIN_ID \
@@ -235,7 +230,7 @@ lambdavm query tendermint-validator-set
 ```
 Check your validator key
 ```bash
-[[ $(lambdavm q staking validator $HYPERSIGN_VALOPER_ADDRESS -oj | jq -r .consensus_pubkey.key) = $(hid-noded status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "\n\e[1m\e[32mTrue\e[0m\n" || echo -e "\n\e[1m\e[31mFalse\e[0m\n"
+[[ $(lambdavm q staking validator $LAMBDA_VALOPER_ADDRESS -oj | jq -r .consensus_pubkey.key) = $(hid-noded status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "\n\e[1m\e[32mTrue\e[0m\n" || echo -e "\n\e[1m\e[31mFalse\e[0m\n"
 ```
 ## Get list of validators
 - For Active Validators
@@ -289,7 +284,6 @@ sudo systemctl stop lambdavm
 sudo systemctl disable lambdavm
 sudo rm /etc/systemd/system/lambdavm* -rf
 sudo rm $(which lambdavm) -rf
-sudo rm $HOME/.lambdavm -rf
+sudo rm $HOME/.lambdavm* -rf
 sudo rm $HOME/lambdavm -rf
-sudo rm -rf lambda.sh
-sed -i '/lambda
+sed -i '/LAMBDAVM_/d' ~/.bash_profile
