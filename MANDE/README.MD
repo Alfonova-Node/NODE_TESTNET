@@ -1,8 +1,7 @@
-
-
 <p align="center">
   <img height="300" height="auto" src="https://user-images.githubusercontent.com/44331529/195984832-4b59ffcb-4253-40ee-9168-edc7bfa7425f.png">
 </p>
+
 # Auto Install
 ```bash
 wget -O mande.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/MANDE/mande.sh && chmod +x mande.sh && ./mande.sh
