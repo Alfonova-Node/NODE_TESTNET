@@ -13,10 +13,7 @@
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
 | Tetsnet   |   6| 4GB | 160GB    |
-# Auto Install
-```bash
-wget -O mande.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/MANDE/mande.sh && chmod +x mande.sh && ./mande.sh
-```
+
 # Manual node setup
 If you want to setup fullnode manually follow the steps below
 
