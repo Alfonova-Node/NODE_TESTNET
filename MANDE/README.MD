@@ -186,9 +186,26 @@ mande-chaind tx staking create-validator \
   --identity="" \
   --website="" \
   --details="" \
-  --moniker="$NODENAME" \
+  --moniker $NODENAME \
   --fees 1000mand
   ```
+## Node info
+Synchronization info
+```
+mande-chaind status 2>&1 | jq .SyncInfo
+```
+Validator info
+```
+mande-chaind status 2>&1 | jq .ValidatorInfo
+```
+Node info
+```
+mande-chaind status 2>&1 | jq .NodeInfo
+```
+Show node id
+```
+mande-chaind tendermint show-node-id
+```
 ## Delete Node
 ```bash
 sudo systemctl stop mande-chaind && \
