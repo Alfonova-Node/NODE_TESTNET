@@ -172,9 +172,19 @@ s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.mande-chain/config/config
 mande-chaind tendermint unsafe-reset-all --home /root/.mande-chain --keep-addr-book
 systemctl restart mande-chaind && journalctl -u mande-chaind -f -o cat
 ```
+MANDE_WALLET_ADDRESS=$(mande-chaind keys show $WALLET -a)
+MANDE_VALOPER_ADDRESS=$(mande-chaind keys show $WALLET --bech val -a)
+echo 'export MANDE_WALLET_ADDRESS='${MANDE_WALLET_ADDRESS} >> $HOME/.bash_profile
+echo 'export MANDE_VALOPER_ADDRESS='${MANDE_VALOPER_ADDRESS} >> $HOME/.bash_profile
+source $HOME/.bash_profile
+
 ## Get Faucet
 ```bash
 curl -d '{"address":"YOUR_ADDRESS"}' -H 'Content-Type: application/json' http://35.224.207.121:8080/request
+```
+> Cek Ballance
+```bash
+mande-chaind query bank balances $MANDE_WALLET_ADDRESS
 ```
 ## Create Validator
 ```bash
