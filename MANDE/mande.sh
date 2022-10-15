@@ -29,7 +29,7 @@ NOIS_PORT=31
 if [ ! $WALLET ]; then
 	echo "export WALLET=wallet" >> $HOME/.bash_profile
 fi
-echo "export MANDE_CHAIN_ID=mande-testnet-1" >> $HOME/.bash_profile
+echo "export MANDE_CHAIN_ID="mande-testnet-1" >> $HOME/.bash_profile
 echo "export MANDE_PORT=${MANDE_PORT}" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
