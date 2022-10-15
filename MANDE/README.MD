@@ -2,6 +2,17 @@
   <img height="300" height="auto" src="https://user-images.githubusercontent.com/44331529/195984832-4b59ffcb-4253-40ee-9168-edc7bfa7425f.png">
 </p>
 
+[GitHub](https://github.com/mande-labs)
+=
+[EXPLORER 1](https://explorer.stavr.tech/mande-chain/staking) \
+[EXPLORER 2](https://test.anode.team/mande-network/staking)
+=
+
+- **Minimum hardware requirements**:
+
+| Node Type |CPU | RAM  | Storage  | 
+|-----------|----|------|----------|
+| Tetsnet   |   6| 4GB | 160GB    |
 # Auto Install
 ```bash
 wget -O mande.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/MANDE/mande.sh && chmod +x mande.sh && ./mande.sh
