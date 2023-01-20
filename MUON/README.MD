@@ -37,7 +37,7 @@ The result should look like this:
 {"address":"0x06A85356DCb5b307096726FB86A78c59D38e08ee","peerId":"Qma3GsJmB47xYuyahPZPSadh1avvxfyYQwk8R3UnFrQ6aP","managerContract":{"network":"bsctest","address":"0x2efB53c11FC935f6114B3fC37AaFa6a76B263a4E"},"shield":{"enable":false,"apps":[]},"addedToNetwork":false}
 ```
 # Adding the Node to the Network 
-To join ALICE, one needs to stake ALICE token. This dashboard is used for staking ALICE test token, and adding the node to the Testnet. Here is a step-by-step description:
+To join ALICE, one needs to stake ALICE token. [This dashboard](https://alice.muon.net/join/) is used for staking ALICE test token, and adding the node to the Testnet. Here is a step-by-step description:
 As ALICE's node manager is deployed on BSC Testnet, this network should be added to your wallet before you can start adding the node. The "SWITCH NETWORK" button can be used to add and switch to this network.
 
 ![Screenshoot 1](https://user-images.githubusercontent.com/85473027/213611801-fbabd7ca-2c25-4f87-a2d4-4fd02a3e9590.png)
