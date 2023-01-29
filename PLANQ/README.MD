@@ -11,7 +11,7 @@ NODE  | CPU     | RAM      | SSD     |
 
 ### Install otomatis
 ```bash
-wget -O planq.sh https://raw.githubusercontent.com/Whalealert/planq-mainnet/main/planq.sh && chmod +x planq.sh && ./planq.sh
+wget -O planq.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/PLANQ/planq.sh && chmod +x planq.sh && ./planq.sh
 ```
 ### Load variable ke system
 ```
