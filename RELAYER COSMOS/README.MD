@@ -419,17 +419,10 @@ journalctl -ocat -fu hermesd
 ## Test IBC TRansfer
 
 ```bash
-hermes tx ft-transfer \
---src-chain osmosis-1 \
---dst-chain planq_7070-2 \
---src-port transfer \
---src-channel channel-492 \
---key-name relayer \
---receiver <planq_address> \
---amount 1 \
---denom <uosmo_atau_IBC_token> \
---timeout-seconds 60 \
---timeout-height-offset 180 
+hermes tx ft-transfer --timeout-height-offset 10 --number-msgs 1 --dst-chain stride-1 --src-chain planq_7070-2 --src-port transfer --src-channel channel-8 --amount 10 --denom aplanq
+hermes tx ft-transfer --timeout-height-offset 10 --number-msgs 1 --dst-chain cosmoshub-4 --src-chain planq_7070-2 --src-port transfer --src-channel channel-2 --amount 10 --denom aplanq
+hermes tx ft-transfer --timeout-height-offset 10 --number-msgs 1 --dst-chain osmosis-1 --src-chain planq_7070-2 --src-port transfer --src-channel channel-1 --amount 10 --denom aplanq
+hermes tx ft-transfer --timeout-height-offset 10 --number-msgs 1 --dst-chain gravity-bridge-3 --src-chain planq_7070-2 --src-port transfer --src-channel channel-0 --amount 10 --denom aplanq
 ```
 
 `
