@@ -17,6 +17,7 @@ mkdir -p /var/www/snapshot/planq
 ```
 
 ```bash
+sudo cat <<EOF > /etc/nginx/sites-enabled/your_domain_name.conf
 server {
 
         # SSL configuration
@@ -39,7 +40,7 @@ server {
 
         # Add index.php to the list if you are using PHP
         index index.html index.htm index.nginx-debian.html;
-        server_name NAMA_DOMAIN_KAMU; 
+        server_name your_domain_name; 
 
 
         location / {
@@ -47,9 +48,11 @@ server {
                 # as directory, then fall back to displaying a 404.
                 # try_files $uri $uri/ =404;
                 root /var/www/snapshot/;
-                autoindex on;
+                autoindex off;
         }
-```
+    }
+EOF
+
 ## Restart Your Web Server Servces
 ```bash
 service nginx restart
