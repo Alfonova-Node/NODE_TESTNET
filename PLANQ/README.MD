@@ -9,6 +9,7 @@ NODE  | CPU     | RAM      | SSD     |
 | ------------- | ------------- | ------------- | -------- |
 | Mainnet | 4          | 32         | 1TB  |
 
+### [EXPLORER](https://explorer.alfonova.online/planq)
 ### Install otomatis
 ```bash
 wget -O planq.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/PLANQ/planq.sh && chmod +x planq.sh && ./planq.sh
