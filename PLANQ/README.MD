@@ -126,7 +126,7 @@ planqd tx slashing unjail \
   --from=$WALLET \
   --chain-id=planq_7070-2 \
   --gas="1000000" \
-  --gas-prices="30000000000aplanq" \
+  --gas-prices="30000000000aplanq"
 ```
 ### Voting
 ```bash
