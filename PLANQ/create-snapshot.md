@@ -56,5 +56,5 @@ EOF
 
 ## Restart Your Web Server Servces
 ```
-sevice nginx restart
+service nginx restart
 ```
