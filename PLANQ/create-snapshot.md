@@ -54,4 +54,4 @@ server {
 EOF
 
 ## Restart Your Web Server Servces
-`sevice nginx restart`
+```sevice nginx restart```
