@@ -2,7 +2,7 @@
 # Manta The Manta Network Trusted Setup Is Now Open for Contributions
 
 <p style="font-size:14px" align="left">
-<a href="https://t.me/node_testnet" target="_blank">JAIRDROP JP MAX 2023</a>
+<a href="https://t.me/node_testnet" target="_blank">AIRDROP JP MAX 2023</a>
 </p>
 
 <p align="center">
