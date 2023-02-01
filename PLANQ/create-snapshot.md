@@ -52,6 +52,7 @@ server {
         }
     }
 EOF
+```
 
 ## Restart Your Web Server Servces
 ```
