@@ -6,7 +6,7 @@
 - **Repo ping pub buat deploy explorernya**
 
 ## Di node API nya jadiin true
-![img](./img/api.jpg)
+![img](https://raw.githubusercontent.com/jambulmerah/guide-testnet/main/cosmos-based/ping-pub-explorer/img/api.jpg)
 - **Kalo udah di truein restart nodenya**
 ## Install paket yang di butihkan
 ```
