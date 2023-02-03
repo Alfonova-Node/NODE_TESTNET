@@ -26,13 +26,13 @@ Anda dapat mengatur node Anda dalam beberapa menit dengan menggunakan skrip otom
 
 > ## Gunakan perintah dibawah ini jika anda belum memiliki ```Wallet Address``` Massa.
 
-```
-wget -O massa-testnet.sh https://raw.githubusercontent.com/mdlog/testnet-mdlog/main/massa/massa-testnet.sh && chmod +x massa-testnet.sh && ./massa-testnet.sh
+```bash
+wget -O massa-testnet.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/MASSA/massa-testnet.sh && chmod +x massa-testnet.sh && ./massa-testnet.sh
 ```
 > ## Gunakan perintah dibawah ini jika anda sudah memiliki ```Wallet Address``` Massa dan ingin mengimport ```Secret Key```.
 
-```
-wget -O massa-import.sh https://raw.githubusercontent.com/mdlog/testnet-mdlog/main/massa/massa-import.sh && chmod +x massa-import.sh && ./massa-import.sh
+```bash
+wget -O massa-import.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/MASSA/massa-import.sh && chmod +x massa-import.sh && ./massa-import.sh
 ```
 
 Setelah proses instalasi binary dari massa selesai, dan di terminal anda muncul ```sleep......``` anda bisa menekan ```CTRL + A + D``` di keyboard anda. Selanjutnya masuk kedalam folder ```massa-client``` letaknya ada di ```cd massa/massa-client``` setelah berada di folder ```massa-client``` jalankan perintah berikut ```./massa-client -p <passsword>```, ganti ```<password>``` dengan password massa-client yang sudah anda buat saat tahap instalasi. Selanjutnya jika sudah berada di terminal client massa silahkan jalankan perintah berikut di command line, perintah ini untuk melihat data Wallet Address anda.
@@ -45,7 +45,7 @@ Setelah informasi wallet address anda muncul salin ```alamat address``` anda dan
 
 
 Cek Node yang sedang berjalan
-```
+```bash
 sudo tail -f /root/massa/massa-node/logs.txt
 ```
 
@@ -54,7 +54,7 @@ sudo tail -f /root/massa/massa-node/logs.txt
 
 Jika anda menggunakan cara otomatis (OPSI 2) saat menjalankan node ```Episode 13``` anda bisa menggunakan command dibawah ini untuk melakukan update terhadap node anda, dengan catatan node ```Versi 13``` anda berada didalam server VPS yang sama dan anda mau mengupdatenya ke ```versi 14```. Silahkan jalan perintah dibawah ini untuk melakukan update.
 
-``` 
+```bash
 wget -O update-node.sh https://raw.githubusercontent.com/mdlog/testnet-mdlog/main/massa/update-node.sh && chmod +x update-node.sh && ./update-node.sh
 ```
 Dengan menjalankan perintah ```Update Node``` anda telah memperbaharui versi node anda dari versi 13 ke versi 14 sekaligus memindahkan wallet dan Node yang ada di versi 13 ke versi 14, jadi anda tidak perlu membuat wallet baru lagi.
