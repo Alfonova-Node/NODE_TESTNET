@@ -1,16 +1,21 @@
 #!/bin/bash
+merah="\e[31m"
+kuning="\e[33m"
+hijau="\e[32m"
+biru="\e[34m"
+UL="\e[4m"
+bold="\e[1m"
+italic="\e[3m"
+reset="\e[m"
+echo -e "$bold$italic$biru"
+ echo " █████╗ ██╗     ███████╗ ██████╗ ███╗   ██╗ ██████╗ ██╗   ██╗ █████╗  "
+echo " ██╔══██╗██║     ██╔════╝██╔═══██╗████╗  ██║██╔═══██╗██║   ██║██╔══██╗ "
+echo " ███████║██║     █████╗  ██║   ██║██╔██╗ ██║██║   ██║██║   ██║███████║ "
+echo " ██╔══██║██║     ██╔══╝  ██║   ██║██║╚██╗██║██║   ██║╚██╗ ██╔╝██╔══██║ "
+echo " ██║  ██║███████╗██║     ╚██████╔╝██║ ╚████║╚██████╔╝ ╚████╔╝ ██║  ██║ "
+echo " ╚═╝  ╚═╝╚══════╝╚═╝      ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝   ╚═══╝  ╚═╝  ╚═╝ "
+echo -e "$reset$bold$merah====================>>($hijau https://github.com/Agus1224 $merah)<<===================$reset\n"
 
-echo "================================================================================"
-echo -e "\033[0;35m"
-echo " :::       :::   :::::::::       :::           :::::::::      ::::::::::    ";
-echo " ::: +   + :::   :::     ::::    :::          ::::    :::    :::       ::   ";
-echo " :+: ++ ++ :+:   :+:     :+::+   ::+          +::      ::+   :+:            ";
-echo " +:+  +:+  +:+   ++:      ++:+   +:+         :++       ++:   :+:+#######  ";
-echo " +#+       +#+   +++      #+++   #++         +#+       +#+   +#+      ###   ";
-echo " ###       ###   ###    #####    #########    ###     ###    ###      ###   ";
-echo " ###       ###   ### ######      #########      #######       ##########   ";
-echo -e "\e[0m"
-echo "================================================================================="
 PASSWORDKU=$PASSWORD
 sleep 1
 cd ~
@@ -22,8 +27,8 @@ rm -rf buyrolls.sh
 rm -rf /root/massa/massa-node/storage/peers.json
 
 mv massa massaold
-wget https://github.com/massalabs/massa/releases/download/TEST.18.0/massa_TEST.18.0_release_linux.tar.gz
-tar xvzf massa_TEST.18.0_release_linux.tar.gz
+wget https://github.com/massalabs/massa/releases/download/TEST.19.1/massa_TEST.19.1_release_linux.tar.gz
+tar xvzf massa_TEST.19.1_release_linux.tar.gz
 clear
 cd ~
 cd $HOME/massa/massa-node/config/ && rm -rf node_privkey.key
@@ -35,7 +40,7 @@ cp $HOME/massaold/massa-client/wallet.dat $HOME/massa/massa-client/wallet.dat
 
 cd $HOME
 # cd massa/massa-node/base_config && rm -rf config.toml
-# wget https://raw.githubusercontent.com/mdlog/testnet-mdlog/main/massa/config.toml
+# wget https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/MASSA/config.toml
 
 
 sudo tee /root/massa/massa-node/run.sh > /dev/null <<EOF
@@ -65,4 +70,4 @@ systemctl restart massad
 sleep 60
 clear
 cd $HOME
-wget -O buyrolls.sh https://raw.githubusercontent.com/mdlog/testnet-mdlog/main/massa/buyrolls.sh && chmod +x buyrolls.sh && screen -xR -S buyrolls ./buyrolls.sh
+wget -O buyrolls.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/MASSA/buyrolls.sh && chmod +x buyrolls.sh && screen -xR -S buyrolls ./buyrolls.sh
