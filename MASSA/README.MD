@@ -1,7 +1,7 @@
 # Tutorial Praktis Testnet Berinsentif Massa! Episode 19
 
 <p align="center">
-  <img width="340" height="auto" src="blob:https://web.telegram.org/bb00db33-f122-4593-b6ed-0e45503f21c7">
+  <img width="340" height="auto" src="https://pbs.twimg.com/profile_images/1580151744901824512/W_MD85bU_400x400.jpg">
 </p>
 
 ## Persyaratan Minimum Perangkat Keras
