@@ -13,7 +13,7 @@ screen -R planq
 ```
 ./autocompound2.sh -k <nama_wallet_kamu>
 ```
-Masukan Pass kamu Setelah itu Pilih Yes jika data nya sudah benar dan ENTER
+Masukan Pass kamu Setelah itu Pilih Yes jika data nya sudah benar dan `ENTER`
 
 Tekan `CTRL+A+D` untuk keluar dari `Screen` nya
 dan untuk masuk ke screen nya tekan `screen -Rd planq`
