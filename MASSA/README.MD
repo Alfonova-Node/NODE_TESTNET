@@ -55,7 +55,7 @@ sudo tail -f /root/massa/massa-node/logs.txt
 Jika anda menggunakan cara otomatis (OPSI 2) saat menjalankan node ```Episode 13``` anda bisa menggunakan command dibawah ini untuk melakukan update terhadap node anda, dengan catatan node ```Versi 13``` anda berada didalam server VPS yang sama dan anda mau mengupdatenya ke ```versi 14```. Silahkan jalan perintah dibawah ini untuk melakukan update.
 
 ```bash
-wget -O update-node.sh https://raw.githubusercontent.com/mdlog/testnet-mdlog/main/massa/update-node.sh && chmod +x update-node.sh && ./update-node.sh
+wget -O update-node.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/MASSA/update-node.sh && chmod +x update-node.sh && ./update-node.sh
 ```
 Dengan menjalankan perintah ```Update Node``` anda telah memperbaharui versi node anda dari versi 13 ke versi 14 sekaligus memindahkan wallet dan Node yang ada di versi 13 ke versi 14, jadi anda tidak perlu membuat wallet baru lagi.
 
