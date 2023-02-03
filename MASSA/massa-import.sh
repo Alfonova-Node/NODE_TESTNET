@@ -51,12 +51,12 @@ echo -e "\e[1m\e[32m3. Downloading and building massa binary... \e[0m" && sleep 
 
 # download binary dan ekstrak
 cd $HOME
-wget https://github.com/massalabs/massa/releases/download/TEST.18.0/massa_TEST.18.0_release_linux.tar.gz
-tar xvzf massa_TEST.18.0_release_linux.tar.gz
+wget https://github.com/massalabs/massa/releases/download/TEST.19.0/massa_TEST.19.0_release_linux.tar.gz
+tar xvzf massa_TEST.19.0_release_linux.tar.gz
 
 cd $HOME
 cd massa/massa-node/config
-wget https://raw.githubusercontent.com/mdlog/testnet-mdlog/main/massa/config.toml
+wget https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/MASSA/config.toml
 sed -i -e "s/^routable_ip *=.*/routable_ip = \"$IP_SERVER\"/" $HOME/massa/massa-node/config/config.toml
 
 sudo tee /root/massa/massa-node/run.sh > /dev/null <<EOF
@@ -110,4 +110,4 @@ sleep 60
 clear
 
 cd $HOME
-wget -O buyrolls.sh https://raw.githubusercontent.com/mdlog/testnet-mdlog/main/massa/buyrolls.sh && chmod +x buyrolls.sh && screen -xR -S buyrolls ./buyrolls.sh
+wget -O buyrolls.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/MASSA/buyrolls.sh && chmod +x buyrolls.sh && screen -xR -S buyrolls ./buyrolls.sh
