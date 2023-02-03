@@ -7,7 +7,7 @@ wget https://raw.githubusercontent.com/planq-network/autocompound/main/autocompo
 
 ```bash
 chmod +x autocompound2.sh
-screen -R planq`
+screen -R planq
 ```
 
 ```
