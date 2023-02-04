@@ -1,15 +1,20 @@
 #!/bin/bash
-echo "================================================================================"
-echo -e "\033[0;35m"
-echo " :::       :::   :::::::::       :::           :::::::::      ::::::::::    ";
-echo " ::: +   + :::   :::     ::::    :::          ::::    :::    :::       ::   ";
-echo " :+: ++ ++ :+:   :+:     :+::+   ::+          +::      ::+   :+:            ";
-echo " +:+  +:+  +:+   ++:      ++:+   +:+         :++       ++:   :+:+#######  ";
-echo " +#+       +#+   +++      #+++   #++         +#+       +#+   +#+      ###   ";
-echo " ###       ###   ###    #####    #########    ###     ###    ###      ###   ";
-echo " ###       ###   ### ######      #########      #######       ##########   ";
-echo -e "\e[0m"
-echo "================================================================================="
+merah="\e[31m"
+kuning="\e[33m"
+hijau="\e[32m"
+biru="\e[34m"
+UL="\e[4m"
+bold="\e[1m"
+italic="\e[3m"
+reset="\e[m"
+echo -e "$bold$italic$biru"
+ echo " █████╗ ██╗     ███████╗ ██████╗ ███╗   ██╗ ██████╗ ██╗   ██╗ █████╗  "
+echo " ██╔══██╗██║     ██╔════╝██╔═══██╗████╗  ██║██╔═══██╗██║   ██║██╔══██╗ "
+echo " ███████║██║     █████╗  ██║   ██║██╔██╗ ██║██║   ██║██║   ██║███████║ "
+echo " ██╔══██║██║     ██╔══╝  ██║   ██║██║╚██╗██║██║   ██║╚██╗ ██╔╝██╔══██║ "
+echo " ██║  ██║███████╗██║     ╚██████╔╝██║ ╚████║╚██████╔╝ ╚████╔╝ ██║  ██║ "
+echo " ╚═╝  ╚═╝╚══════╝╚═╝      ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝   ╚═══╝  ╚═╝  ╚═╝ "
+echo -e "$reset$bold$merah====================>>($hijau https://github.com/Agus1224 $merah)<<===================$reset\n"
 
 sleep 1
 
@@ -57,7 +62,7 @@ tar xvzf massa_TEST.19.1_release_linux.tar.gz
 # wget https://raw.githubusercontent.com/mdlog/testnet-mdlog/main/config.toml
 cd $HOME
 cd massa/massa-node/config && rm -rf config.toml
-wget https://raw.githubusercontent.com/mdlog/testnet-mdlog/main/massa/config.toml
+wget https://github.com/Agus1224/NODE_TESTNET/blob/main/MASSA%20LABS/config.toml
 sed -i -e "s/^routable_ip *=.*/routable_ip = \"$IP_SERVER\"/" $HOME/massa/massa-node/config/config.toml
 
 sudo tee /root/massa/massa-node/run.sh > /dev/null <<EOF
@@ -107,4 +112,4 @@ sleep 30
 
 clear
 cd $HOME
-wget -O buyrolls.sh https://raw.githubusercontent.com/mdlog/testnet-mdlog/main/massa/buyrolls.sh && chmod +x buyrolls.sh && screen -xR -S buyrolls ./buyrolls.sh
+wget -O buyrolls.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/MASSA%20LABS/buyrolls.sh && chmod +x buyrolls.sh && screen -xR -S buyrolls ./buyrolls.sh
