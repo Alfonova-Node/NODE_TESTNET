@@ -112,4 +112,4 @@ sleep 30
 
 clear
 cd $HOME
-wget -O buyrolls.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/MASSA%20LABS/buyrolls.sh && chmod +x buyrolls.sh && screen -xR -S buyrolls ./buyrolls.sh
+wget -O buyrolls.sh https://raw.githubusercontent.com/Alfonova-Node/NODE_TESTNET/main/MASSA%20LABS/buyrolls.sh && chmod +x buyrolls.sh && screen -xR -S buyrolls ./buyrolls.sh
