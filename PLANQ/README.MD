@@ -12,7 +12,7 @@ NODE  | CPU     | RAM      | SSD     |
 ### [EXPLORER](https://explorer.alfonova.online/planq)
 ### Install otomatis
 ```bash
-wget -O planq.sh https://raw.githubusercontent.com/Agus1224/NODE_TESTNET/main/PLANQ/planq.sh && chmod +x planq.sh && ./planq.sh
+wget -O planq.sh https://raw.githubusercontent.com/Alfonova-Node/NODE_TESTNET/main/PLANQ/planq.sh && chmod +x planq.sh && ./planq.sh
 ```
 ### Load variable ke system
 ```
