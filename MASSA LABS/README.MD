@@ -128,6 +128,7 @@ c. Cek portnya apakah sudah open atau tidak, hal ini sebagai bukti bahwa node ya
 
 Klik https://www.yougetsignal.com/tools/open-ports/
 Masukkan IP Address vps dan `PORT MASSA`: `31244 & 31245`
+
 d. Jika port Massa belum OPEN, sebaiknya anda mengulangi langkah tersebut dengan benar atau membuka PORT di Panel VPS
 
 ### Jika nodenya tiba-tiba mengalami error silahkan jalankan perintah berikut untuk merestart node dengan cara:
