@@ -16,7 +16,7 @@ NODE TIPE | CPU     | RAM      | SSD     |
 
   
 
-## Shardeum için önemli linkler:
+## Important links for Shardeum:
 - <a href="https://shardeum.org" target="_blank">Website</a>
 - <a href="https://explorer-sphinx.shardeum.org" target="_blank">Explorer</a>
 - <a href="https://twitter.com/shardeum" target="_blank">Twitter</a>
@@ -119,4 +119,4 @@ pm2 list
   
   ![image](https://user-images.githubusercontent.com/101462877/216434539-6bcf7343-fcb3-423a-a7ee-d1cb8f1dde68.png)
 
-
+# JANGAN LUPA NGOPI NYA !!!
