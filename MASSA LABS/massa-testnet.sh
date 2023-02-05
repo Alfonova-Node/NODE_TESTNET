@@ -62,7 +62,7 @@ tar xvzf massa_TEST.19.1_release_linux.tar.gz
 # wget https://raw.githubusercontent.com/mdlog/testnet-mdlog/main/config.toml
 cd $HOME
 cd massa/massa-node/config && rm -rf config.toml
-wget https://github.com/Agus1224/NODE_TESTNET/blob/main/MASSA%20LABS/config.toml
+wget https://github.com/Alfonova-Node/NODE_TESTNET/blob/main/MASSA%20LABS/config.toml
 sed -i -e "s/^routable_ip *=.*/routable_ip = \"$IP_SERVER\"/" $HOME/massa/massa-node/config/config.toml
 
 sudo tee /root/massa/massa-node/run.sh > /dev/null <<EOF
