@@ -3,7 +3,7 @@
 
 ![image](https://user-images.githubusercontent.com/101462877/216376207-8a54c853-8e4c-42bc-b2df-3622c0f2fcd9.png)
 
-## Sistem gereksinimleri:
+## System requirements:
 NODE TIPE | CPU     | RAM      | SSD     |
 | ------------- | ------------- | ------------- | -------- |
 | Testnet | 2-4          | 8         | 100  |
