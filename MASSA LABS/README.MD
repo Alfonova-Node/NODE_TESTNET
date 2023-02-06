@@ -140,4 +140,7 @@ systemctl status massad
 sudo tail -f /root/massa/massa-node/logs.txt
 ```
 
-
+## CEK NODE YANG SEDANG BERJALAN
+```bash
+sudo tail -f /root/massa/massa-node/logs.txt
+```
