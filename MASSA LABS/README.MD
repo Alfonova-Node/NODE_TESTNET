@@ -144,3 +144,13 @@ sudo tail -f /root/massa/massa-node/logs.txt
 ```bash
 sudo tail -f /root/massa/massa-node/logs.txt
 ```
+## HAPUS NODE MASSA
+```bash
+sudo systemctl stop massad
+sudo systemctl disable massad
+rm /etc/systemd/system/massad.service
+rm -rf massa
+rm -rf massa-test.sh
+rm -rf massa-testnet.sh
+rm -rf massa_TEST.19.0_release_linux.tar.gz
+```
