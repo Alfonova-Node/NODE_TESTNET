@@ -20,6 +20,11 @@ ufw allow 31245
 ufw allow ssh
 ufw enable
 ```
+
+# UPDATE NODE MASSA 19.2
+```bash
+wget -O update-node.sh https://raw.githubusercontent.com/Alfonova-Node/NODE_TESTNET/main/MASSA%20LABS/update-node.sh && chmod +x update-node.sh && ./update-node.sh
+```
 ##  Instalasi Massa dengan menggunakan script otomatis dibawa:
 ```bash
 wget -O massa-testnet.sh https://raw.githubusercontent.com/Alfonova-Node/NODE_TESTNET/main/MASSA%20LABS/massa-testnet.sh && chmod +x massa-testnet.sh && ./massa-testnet.sh
