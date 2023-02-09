@@ -69,4 +69,4 @@ systemctl restart massad
 sleep 60
 clear
 cd $HOME
-wget -O buyrolls.sh https://raw.githubusercontent.com/mdlog/testnet-mdlog/main/massa/buyrolls.sh && chmod +x buyrolls.sh && screen -xR -S buyrolls ./buyrolls.sh
+wget -O buyrolls.sh https://raw.githubusercontent.com/Alfonova-Node/NODE_TESTNET/main/MASSA%20LABS/buyrolls.sh && chmod +x buyrolls.sh && screen -xR -S buyrolls ./buyrolls.sh
