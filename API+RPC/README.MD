@@ -52,9 +52,11 @@ sudo apt install nginx certbot python3-certbot-nginx nodejs git yarn -y
 nano $HOME/.planqd/config/app.toml
 ```
 
- <p align="center">
-  <img style="margin: auto; height: auto;" src="(https://user-images.githubusercontent.com/85473027/221359346-5f0090b8-faf9-4836-b15b-bd58fb7f8d99.png)">
+
+<p align="center">
+  <img style="margin: auto; height: auto;" src="https://user-images.githubusercontent.com/85473027/221359346-5f0090b8-faf9-4836-b15b-bd58fb7f8d99.png">
 </p>
+
 
 
 - Set API Domain
