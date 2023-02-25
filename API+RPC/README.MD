@@ -1,4 +1,4 @@
-# Guide Create RPC API Node Cosmos
+# Guide Create RPC API GRPC and GRPC WEB Node Cosmos
 
 ## Prepare : 
 - Domain and Subdomain
@@ -46,6 +46,16 @@ sudo apt install nginx certbot python3-certbot-nginx nodejs git yarn -y
   <img style="margin: auto; height: auto;" src="https://user-images.githubusercontent.com/65535542/215300949-42bb29cc-116d-483d-a512-a4c29fb325d1.png">
 </p>
 
+### Cek GRPC dan GRPC IP:PORT
+
+```bash
+nano $HOME/.planqd/config/app.toml
+```
+
+ <p align="center">
+  <img style="margin: auto; height: auto;" src="(https://user-images.githubusercontent.com/85473027/221359346-5f0090b8-faf9-4836-b15b-bd58fb7f8d99.png)">
+</p>
+
 
 - Set API Domain
 ```bash
@@ -59,13 +69,34 @@ API_IP_PORT="IP:PORT"
 
 - Set RPC Domain
 ```bash
-RPC_DOMAIN="YOUR_API_DOMAIN
+RPC_DOMAIN="YOUR_API_DOMAIN"
 ```
 
 - Set RPC Port
 
 ```bash
 RPC_IP_PORT="IP:PORT"
+```
+
+- Set GRPC Domain
+```bash
+GRPC_DOMAIN="YOUR_GRPC_DOMAIN"
+```
+- set GRPC Port
+
+```bash
+GRPC_IP_PORT="IP:PORT"
+```
+
+- Set GRPC_WEB Domain
+
+```bash
+GRPC_WEB_DOMAIN="YOUR_GRPC_WEB_DOMAIN"
+```
+- set GRPC_WEB Port
+
+```bash
+GRPC_WEB_IP_PORT="IP:PORT"
 ```
 
 
@@ -119,6 +150,52 @@ server {
 }
 EOF
 ```
+### Create GRPC Config
+
+```bash
+sudo cat <<EOF > /etc/nginx/sites-enabled/${GRPC_DOMAIN}.conf
+server {
+    server_name $GRPC_DOMAIN;
+    listen 80;
+    location / {
+        add_header Access-Control-Allow-Origin *;
+        add_header Access-Control-Max-Age 3600;
+        add_header Access-Control-Expose-Headers Content-Length;
+
+	proxy_set_header   X-Real-IP        \$remote_addr;
+        proxy_set_header   X-Forwarded-For  \$proxy_add_x_forwarded_for;
+        proxy_set_header   Host             \$host;
+
+        proxy_pass http://$GRPC_IP_PORT;
+
+    }
+}
+EOF
+```
+
+### Create GRPC WEB Config
+
+```bash
+sudo cat <<EOF > /etc/nginx/sites-enabled/${GRPC_WEB_DOMAIN}.conf
+server {
+    server_name $GRPC_WEB_DOMAIN;
+    listen 80;
+    location / {
+        add_header Access-Control-Allow-Origin *;
+        add_header Access-Control-Max-Age 3600;
+        add_header Access-Control-Expose-Headers Content-Length;
+
+	proxy_set_header   X-Real-IP        \$remote_addr;
+        proxy_set_header   X-Forwarded-For  \$proxy_add_x_forwarded_for;
+        proxy_set_header   Host             \$host;
+
+        proxy_pass http://$GRPC_WEB_IP_PORT;
+
+    }
+}
+EOF
+```
+
 
 ### Config Test
 
@@ -138,5 +215,5 @@ Output if Succes
 
 ```bash
 sudo certbot --nginx --register-unsafely-without-email
-sudo certbot --nginx --redirect -d ${API_DOMAIN},${RPC_DOMAIN}
+sudo certbot --nginx --redirect -d ${API_DOMAIN},${RPC_DOMAIN},${GRPC_DOMAIN},${GRPC_WEB_DOMAIN}
 ```
