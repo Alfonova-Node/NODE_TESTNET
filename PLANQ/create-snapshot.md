@@ -54,6 +54,10 @@ server {
 EOF
 ```
 
+```bash
+service nginx restart
+```
+
 ## Memasang sel
 
 ```bash
@@ -89,7 +93,3 @@ sudo systemctl start planqd
 journalctl -fu planqd -o cat
 ```
 
-## Restart Your Web Server Servces
-```
-service nginx restart
-```
