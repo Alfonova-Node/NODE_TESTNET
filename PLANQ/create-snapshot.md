@@ -48,10 +48,40 @@ server {
                 # as directory, then fall back to displaying a 404.
                 # try_files $uri $uri/ =404;
                 root /var/www/snapshot/;
-                autoindex off;
+                autoindex on;
         }
     }
 EOF
+```
+## Memasang sel
+
+```bash
+sudo certbot --nginx --register-unsafely-without-email
+sudo certbot --nginx --redirect
+```
+
+
+## CARA PAKAI
+
+```bash
+sudo apt update 
+sudo apt install snapd -y 
+sudo snap install lz4 
+sudo systemctl stop
+```
+
+```bash
+wget -O wget -O planq-snapshot-20230128.tar.lz4 https://snapshot-planq.alfonova.online/planq/planq-snapshot-20230128.tar.lz4 --inet4-only
+```
+
+```bash
+lz4 -c -d planq-snapshot-20230128.tar.lz4 | tar -x -C $HOME/.planqd
+```
+```bash
+sudo systemctl start planqd
+```
+```bash
+journalctl -fu planqd -o cat
 ```
 
 ## Restart Your Web Server Servces
