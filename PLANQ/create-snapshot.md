@@ -53,16 +53,16 @@ server {
     }
 EOF
 ```
-```bash
-sudo systemctl restart nginx
-```
-
 
 ## Memasang sel
 
 ```bash
 sudo certbot --nginx --register-unsafely-without-email
 sudo certbot --nginx --redirect
+```
+
+```bash
+sudo systemctl restart nginx
 ```
 
 
