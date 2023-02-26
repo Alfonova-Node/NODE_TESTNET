@@ -53,6 +53,11 @@ server {
     }
 EOF
 ```
+```bash
+sudo systemctl restart nginx
+```
+
+
 ## Memasang sel
 
 ```bash
