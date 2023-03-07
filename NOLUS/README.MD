@@ -1,10 +1,4 @@
-<h3><p style="font-size:14px" align="right">Founder :
-<a href="https://discord.gg/nodexcapital" target="_blank">NodeX Capital Discord Community</a></p></h3>
-<h3><p style="font-size:14px" align="right">Visit Our Website :
-<a href="https://discord.gg/nodexcapital" target="_blank">NodeX Capital Official</a></p></h3>
-<h3><p style="font-size:14px" align="right">Hetzner :
-<a href="https://hetzner.cloud/?ref=bMTVi7dcwSgA" target="_blank">Deploy Hetzner VPS Get 20€ Bonus!</a></h3>
-<hr>
+
 
 <p align="center">
   <img height="100" height="auto" src="https://user-images.githubusercontent.com/34649601/207593974-32d7cb69-eca9-4096-bc96-246fe7038c88.png">
@@ -33,14 +27,13 @@ wget -O nolus.sh https://raw.githubusercontent.com/nodexcapital/testnet/main/nol
 ### Snapshot (Update every 5 hours)
 ```
 sudo systemctl stop nolusd
-cp $HOME/.nolus/data/priv_validator_state.json $HOME/.nolus/data/priv_validator_state.json.backup
+cp $HOME/.nolus/data/priv_validator_state.json $HOME/.nolus/priv_validator_state.json.backup
 rm -rf $HOME/.nolus/data
 
-curl -L https://snap.nodexcapital.com/nolus/nolus-latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nolus
+curl -L https://snapshot.nolus.alfonova.app/nolus/nolus-snapshot-20230306.tar.lz4  | lz4 -dc - | tar -xf - -C $HOME/.nolus
+mv $HOME/.nolus/priv_validator_state.json.backup $HOME/.nolus/data/priv_validator_state.json
 
-mv $HOME/.nolus/data/priv_validator_state.json.backup $HOME/.nolus/data/priv_validator_state.json
-
-sudo systemctl start nolusd && sudo journalctl -fu nolusd -o cat
+sudo systemctl restart nolus && journalctl -u nolusd -f --no-hostname -o cat
 ```
 
 ### State Sync
