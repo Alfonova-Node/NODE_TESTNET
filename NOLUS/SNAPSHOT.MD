@@ -4,9 +4,9 @@ Catch the latest block faster by using our daily snapshots.
 
 
 # Instructions
+Stop the service and reset the data
 
 ```bash
-Stop the service and reset the data
 sudo systemctl stop nolusd
 cp $HOME/.nolus/data/priv_validator_state.json $HOME/.nolus/priv_validator_state.json.backup
 rm -rf $HOME/.nolus/data
