@@ -21,7 +21,7 @@ ufw allow ssh
 ufw enable
 ```
 
-# UPDATE NODE MASSA 19.3
+# UPDATE NODE MASSA 20.1
 ```bash
 wget -O update-node.sh https://raw.githubusercontent.com/Alfonova-Node/NODE_TESTNET/main/MASSA%20LABS/update-node.sh && chmod +x update-node.sh && ./update-node.sh
 ```
