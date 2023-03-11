@@ -21,13 +21,13 @@ cd ~
 rm -rf buyrolls.sh
 sudo apt-get update
 sudo apt-get install libssl-dev -y
-rm -rf massa_TEST.17.2_release_linux.tar.gz
+rm -rf massa_TEST.19.3_release_linux.tar.gz
 rm -rf buyrolls.sh
 rm -rf /root/massa/massa-node/storage/peers.json
 
 mv massa massaold
-wget https://github.com/massalabs/massa/releases/download/TEST.19.2/massa_TEST.19.3_release_linux.tar.gz
-tar xvzf massa_TEST.19.3_release_linux.tar.gz
+wget https://github.com/massalabs/massa/releases/download/TEST.20.1/massa_TEST.20.1_release_linux.tar.gz
+tar xvzf massa_TEST.20.1_release_linux.tar.gz
 clear
 cd ~
 cd $HOME/massa/massa-node/config/ && rm -rf node_privkey.key
