@@ -157,5 +157,5 @@ rm /etc/systemd/system/massad.service
 rm -rf massa
 rm -rf massa-test.sh
 rm -rf massa-testnet.sh
-rm -rf massa_TEST.19.1_release_linux.tar.gz
+rm -rf massa_TEST.19.3_release_linux.tar.gz
 ```
