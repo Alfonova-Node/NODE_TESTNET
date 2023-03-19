@@ -145,18 +145,3 @@ rm -rf bonus.sh && \
 rm -rf .bonusblock && \
 rm -rf $(which bonus-blockd)
 ```
-Connect undefinedundefined
-Connect your undefinedundefined account to send
-and receive money easily
-
-Connect
-Pipped by
-Total Received
-$0
-Be the first to PIP
-Event
-Log 내용
-
-Log 내용
-
-Log 내용
