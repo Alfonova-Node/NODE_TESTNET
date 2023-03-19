@@ -20,7 +20,7 @@ source $HOME/.bash_profile
 ### SNAPSHOT SETIAP 10 JAM !!!
 ```
 sudo apt install lz4 -y
-sudo systemctl stop dbonus-blockd
+sudo systemctl stop bonus-blockd
 cp $HOME/.bonusblock/data/priv_validator_state.json $HOME/.bonusblock/priv_validator_state.json.backup
 rm -rf $HOME/.bonusblock/data
 ```
