@@ -11,7 +11,7 @@ NODE  | CPU     | RAM      | SSD     |
 
 ### Install otomatis
 ```
-wget -O bonus.sh https://raw.githubusercontent.com/Alfonova-Node/NODE_TESTNET/main/BONUS-BLOCK/bonusblock.sh && chmod +x bonusblock.sh && ./bonusblock.sh
+wget -O bonusblock.sh https://raw.githubusercontent.com/Alfonova-Node/NODE_TESTNET/main/BONUS-BLOCK/bonusblock.sh && chmod +x bonusblock.sh && ./bonusblock.sh
 ```
 ### Load variable ke system
 ```
