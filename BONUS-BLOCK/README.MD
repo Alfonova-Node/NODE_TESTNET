@@ -17,9 +17,18 @@ wget -O bonusblock.sh https://raw.githubusercontent.com/Alfonova-Node/NODE_TESTN
 ```
 source $HOME/.bash_profile
 ```
-### Statesync
+### SNAPSHOT SETIAP 10 JAM !!!
 ```
-N/A
+sudo apt install lz4 -y
+sudo systemctl stop dbonus-blockd
+cp $HOME/.bonusblock/data/priv_validator_state.json $HOME/.bonusblock/priv_validator_state.json.backup
+rm -rf $HOME/.bonusblock/data
+```
+```
+curl -L https://snapshot.bonusblock.alfonova.app/bonusblock/bonusblock-snapshot-20230319.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.bonusblock
+mv $HOME/.bonusblock/priv_validator_state.json.backup $HOME/.bonusblock/data/priv_validator_state.json
+
+sudo systemctl restart bonus-blockd && sudo journalctl -u bonus-blockd -f --no-hostname -o cat
 ```
 ### Informasi node
 
