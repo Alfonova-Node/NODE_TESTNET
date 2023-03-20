@@ -25,7 +25,7 @@ cp $HOME/.bonusblock/data/priv_validator_state.json $HOME/.bonusblock/priv_valid
 rm -rf $HOME/.bonusblock/data
 ```
 ```
-curl -L https://snapshot.bonusblock.alfonova.app/bonusblock/bonusblock-snapshot-20230319.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.bonusblock
+curl -L https://snapshot.bonusblock.alfonova.app/bonusblock/bonusblock-snapshot-20230320.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.bonusblock
 mv $HOME/.bonusblock/priv_validator_state.json.backup $HOME/.bonusblock/data/priv_validator_state.json
 
 sudo systemctl restart bonus-blockd && sudo journalctl -u bonus-blockd -f --no-hostname -o cat
@@ -104,7 +104,6 @@ bonus-blockd tx staking create-validator \
 * edit validator
 ```
 bonus-blockd tx staking edit-validator \
-  --new-moniker="nama-node" \
   --identity="<your_keybase_id>" \
   --website="<your_website>" \
   --details="<your_validator_description>" \
@@ -112,7 +111,6 @@ bonus-blockd tx staking edit-validator \
   --gas=auto \
   --fees=260000000ubonus \
   --gas-adjustment=1.2 \
-  --from=$WALLET
 ```
 * unjail validator
 ```
