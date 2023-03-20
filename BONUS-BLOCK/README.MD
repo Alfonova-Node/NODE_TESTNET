@@ -90,8 +90,8 @@ bonus-blockd tx staking create-validator \
   --from $WALLET \
   --commission-max-change-rate "0.01" \
   --commission-max-rate "0.2" \
-  --identity "F57A71944DDA8C4B" \
-  --website https://dwentz.xyz \
+  --identity= "" \
+  --website= ""\
   --commission-rate "0.07" \
   --min-self-delegation "1" \
   --pubkey  $(bonus-blockd tendermint show-validator) \
