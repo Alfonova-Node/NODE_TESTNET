@@ -27,6 +27,8 @@ rm -rf $HOME/.bonusblock/data
 ```
 curl -L https://snapshot.bonusblock.alfonova.app/bonusblock/bonusblock-snapshot-20230320.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.bonusblock
 mv $HOME/.bonusblock/priv_validator_state.json.backup $HOME/.bonusblock/data/priv_validator_state.json
+sudo systemctl restart bonus-blockd && sudo journalctl -fu bonus-blockd -o cat
+
 ```
 
 ### STATESYNC
@@ -52,7 +54,7 @@ sed -i -e "s|^persistent_peers *=.*|persistent_peers = \"$STATESYNC_PEERS\"|" $H
 
 mv $HOME/.bonusblock/priv_validator_state.json.backup $HOME/.bonusblock/data/priv_validator_state.json
 
-sudo systemctl start bonus-blockd && sudo journalctl -fu bonus-blockd -o cat
+sudo systemctl restart bonus-blockd && sudo journalctl -fu bonus-blockd -o cat
 ```
 
 ### Informasi node
