@@ -25,7 +25,7 @@ cp $HOME/.bonusblock/data/priv_validator_state.json $HOME/.bonusblock/priv_valid
 rm -rf $HOME/.bonusblock/data
 ```
 ```
-curl -L https://snapshot.bonusblock.alfonova.app/bonusblock/bonusblock-snapshot-20230319.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.bonusblock
+curl -L https://snapshot.bonusblock.alfonova.app/bonusblock/bonusblock-snapshot-20230320.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.bonusblock
 mv $HOME/.bonusblock/priv_validator_state.json.backup $HOME/.bonusblock/data/priv_validator_state.json
 ```
 
