@@ -34,7 +34,9 @@ mv $HOME/.bonusblock/priv_validator_state.json.backup $HOME/.bonusblock/data/pri
 sudo systemctl stop bonus-blockd
 cp $HOME/.bonusblock/data/priv_validator_state.json $HOME/.bonusblock/priv_validator_state.json.backup
 bonus-blockd tendermint unsafe-reset-all --home $HOME/.bonusblock --keep-addr-book
+```
 
+```bash
 SNAP_RPC="https://rpc.bonusblock.alfonova.app:443"
 STATESYNC_PEERS="270a59ef701bf0072eaf8e3d537d01773e4f2b8f@206.189.207.57:26656"
 
@@ -51,13 +53,6 @@ sed -i -e "s|^persistent_peers *=.*|persistent_peers = \"$STATESYNC_PEERS\"|" $H
 mv $HOME/.bonusblock/priv_validator_state.json.backup $HOME/.bonusblock/data/priv_validator_state.json
 
 sudo systemctl start bonus-blockd && sudo journalctl -fu bonus-blockd -o cat
-```
-
-```
-curl -L https://snapshot.bonusblock.alfonova.app/bonusblock/bonusblock-snapshot-20230320.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.bonusblock
-mv $HOME/.bonusblock/priv_validator_state.json.backup $HOME/.bonusblock/data/priv_validator_state.json
-
-sudo systemctl restart bonus-blockd && sudo journalctl -u bonus-blockd -f --no-hostname -o cat
 ```
 
 ### Informasi node
