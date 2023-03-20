@@ -18,18 +18,48 @@ wget -O bonusblock.sh https://raw.githubusercontent.com/Alfonova-Node/NODE_TESTN
 source $HOME/.bash_profile
 ```
 ### SNAPSHOT SETIAP 10 JAM !!!
-```
+```bash
 sudo apt install lz4 -y
 sudo systemctl stop bonus-blockd
 cp $HOME/.bonusblock/data/priv_validator_state.json $HOME/.bonusblock/priv_validator_state.json.backup
 rm -rf $HOME/.bonusblock/data
 ```
 ```
+curl -L https://snapshot.bonusblock.alfonova.app/bonusblock/bonusblock-snapshot-20230319.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.bonusblock
+mv $HOME/.bonusblock/priv_validator_state.json.backup $HOME/.bonusblock/data/priv_validator_state.json
+```
+
+### STATESYNC
+```bash
+sudo systemctl stop bonus-blockd
+cp $HOME/.bonusblock/data/priv_validator_state.json $HOME/.bonusblock/priv_validator_state.json.backup
+bonus-blockd tendermint unsafe-reset-all --home $HOME/.bonusblock --keep-addr-book
+
+SNAP_RPC="https://rpc.bonusblock.alfonova.app:443"
+STATESYNC_PEERS="270a59ef701bf0072eaf8e3d537d01773e4f2b8f@206.189.207.57:26656"
+
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 2000)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.bonusblock/config/config.toml
+sed -i -e "s|^persistent_peers *=.*|persistent_peers = \"$STATESYNC_PEERS\"|" $HOME/.bonusblock/config/config.toml
+
+mv $HOME/.bonusblock/priv_validator_state.json.backup $HOME/.bonusblock/data/priv_validator_state.json
+
+sudo systemctl start bonus-blockd && sudo journalctl -fu bonus-blockd -o cat
+```
+
+```
 curl -L https://snapshot.bonusblock.alfonova.app/bonusblock/bonusblock-snapshot-20230320.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.bonusblock
 mv $HOME/.bonusblock/priv_validator_state.json.backup $HOME/.bonusblock/data/priv_validator_state.json
 
 sudo systemctl restart bonus-blockd && sudo journalctl -u bonus-blockd -f --no-hostname -o cat
 ```
+
 ### Informasi node
 
 * cek sync node
