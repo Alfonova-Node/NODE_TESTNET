@@ -82,33 +82,29 @@ ununifid tx staking create-validator \
   --fees="500uguu" \
   --from=<wallet_name>
   ```
-  ## State-Sync
+ ## State-Sync
 ```bash
-SNAP_RPC=https://ununifi.rpc.m.anode.team:443 && \
+sudo systemctl stop ununifid
+cp $HOME/.ununifi/data/priv_validator_state.json $HOME/.ununifi/priv_validator_state.json.backup
+ununifid tendermint unsafe-reset-all --home $HOME/.ununifi --keep-addr-book
+```
+```bash
+SNAP_RPC="https://rpc.ununifi.alfonova.app:443"
+STATESYNC_PEERS="35c8edb779e976b1049659e797389aa70113f219@139.59.226.146:26656"
+
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - https://ununifi.rpc.m.anode.team:443)); \
-TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash) && \
-echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-```
-```
-sudo systemctl stop ununifid && ununifid tendermint unsafe-reset-all --home $HOME/.ununifi --keep-addr-book
-```
-```
-peers="39526bf4668ef8a0919c11450372559b7315699a@144.76.97.251:36656"
-sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.ununifi/config/config.toml
-```
-```
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 2000)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+
 sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
 s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.ununifi/config/config.toml
-```
-```
-curl -o - -L https://anode.team/UnUniFi/main/anode.team_ununifi_wasm.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.$FOLDER_WASM$/
-```
-```
-sudo systemctl restart ununifid && journalctl -fu ununifid -o cat
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.ununifi/config/config.toml
+sed -i -e "s|^persistent_peers *=.*|persistent_peers = \"$STATESYNC_PEERS\"|" $HOME/.ununifi/config/config.toml
+
+mv $HOME/.ununifi/priv_validator_state.json.backup $HOME/.ununifi/data/priv_validator_state.json
+
+sudo systemctl restart ununifid && sudo journalctl -fu ununifid -o cat
 ```
 
 ## SnapShot (2 times a day)
@@ -118,10 +114,7 @@ cp $HOME/.ununifi/data/priv_validator_state.json $HOME/.ununifi/priv_validator_s
 rm -rf $HOME/.ununifi/data/
 ```
 ```bash
-curl -o - -L https://anode.team/UnUniFi/main/anode.team_ununifi.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.ununifi
-```
-```bash
-curl -o - -L https://anode.team/UnUniFi/main/anode.team_ununifi_wasm.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.$FOLDER_WASM$/
+curl -L https://snapshot.ununifi.alfonova.app/ununifi/ununifi-snapshot-20230322.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.ununifi
 ```
 ```bash
 mv $HOME/.ununifi/priv_validator_state.json.backup $HOME/.ununifi/data/priv_validator_state.json && \
