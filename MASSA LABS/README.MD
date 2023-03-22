@@ -21,7 +21,7 @@ ufw allow ssh
 ufw enable
 ```
 
-# UPDATE NODE MASSA 20.1
+# UPDATE NODE MASSA 20.2
 ```bash
 wget -O update-node.sh https://raw.githubusercontent.com/Alfonova-Node/NODE_TESTNET/main/MASSA%20LABS/update-node.sh && chmod +x update-node.sh && ./update-node.sh
 ```
@@ -80,7 +80,7 @@ contoh:
 
 `node_start_staking A1uEaLK1z4dYcjBrw9TPrYXAR7EFyLx7XwkMdmRPQhPJmTfoe5j`
 
-Sebagai catatan bahwa untuk testnet insentif episode 19 kali ini, sedikit berbeda dengan episode sebelumnya dengan pertimbangan privasi, jika sebelumnya kita memakai perintah `node_add_staking_secret_keys <your_secret_key>`, di episode terbaru ini (episode 19) kita menggunakan `node_start_staking <your_address>` sebagaimana yang dicontohkan diatas.
+Sebagai catatan bahwa untuk testnet insentif episode 20 kali ini, sedikit berbeda dengan episode sebelumnya dengan pertimbangan privasi, jika sebelumnya kita memakai perintah `node_add_staking_secret_keys <your_secret_key>`, di episode terbaru ini (episode 20) kita menggunakan `node_start_staking <your_address>` sebagaimana yang dicontohkan diatas.
 Untuk mendapatkan `roll aktif`, teman-teman harus menunggu 1 jam 45 menit.
 Ketika roll sudah aktif, berarti teman-teman sudah dalam proses staking, perlu dicatat bahwa satu roll sudah cukup. Testnet massa tidak dinilai dengan banyak roll yang dimiliki, akan tetapi seberapa andal node teman-teman.
 Teman-teman juga bisa memantau faucetnya atau rollsnya aktif atau tidak di space wallet yang saat ini support di Android, dengan menginstallya melalui link https://github.com/bacanlabs/spacewallet/releases/tag/1.0.2
