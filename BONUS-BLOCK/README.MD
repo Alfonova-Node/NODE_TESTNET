@@ -143,7 +143,7 @@ bonus-blockd tx staking edit-validator \
 ```
 bonus-blockd tx slashing unjail \
   --broadcast-mode=block \
-  --from=$WALLET \
+  --from $WALLET \
   --chain-id $BONUS_CHAIN_ID \
   --fees=200000000ubonus \
   --gas-adjustment=1.2 \
