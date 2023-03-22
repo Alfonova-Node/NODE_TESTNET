@@ -121,7 +121,7 @@ ununifid tx staking edit-validator \
   --identity="<your_keybase_id>" \
   --website="<your_website>" \
   --details="<your_validator_description>" \
-  --chain-id CHAIN_ID \
+  --chain-id $CHAIN_ID \
   --gas=auto \
   --fees="500uguu" \
   --gas-adjustment=1.2 \
@@ -131,7 +131,7 @@ ununifid tx staking edit-validator \
 ununifid tx slashing unjail \
   --broadcast-mode=block \
   --from $WALLET \
-  --chain-id HAIN_ID \
+  --chain-id $CHAIN_ID \
   --fees="500uguu" \
   --gas-adjustment=1.2 \
   --gas=auto
