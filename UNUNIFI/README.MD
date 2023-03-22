@@ -1,3 +1,8 @@
+## Auto Install
+```
+wget -O bonusblock.sh https://raw.githubusercontent.com/Alfonova-Node/NODE_TESTNET/main/BONUS-BLOCK/bonusblock.sh && chmod +x bonusblock.sh && ./bonusblock.sh
+```
+
 ## Install last binary
 
 ```bash
