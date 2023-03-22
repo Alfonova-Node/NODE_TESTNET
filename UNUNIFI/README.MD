@@ -1,6 +1,6 @@
 ## Auto Install
 ```
-wget -O bonusblock.sh https://raw.githubusercontent.com/Alfonova-Node/NODE_TESTNET/main/BONUS-BLOCK/bonusblock.sh && chmod +x bonusblock.sh && ./bonusblock.sh
+wget -O ununifi.sh https://raw.githubusercontent.com/Alfonova-Node/NODE_TESTNET/main/UNUNIFI/ununifi.sh && chmod +x ununifi.sh && ./ununifi.sh
 ```
 
 ## Install last binary
