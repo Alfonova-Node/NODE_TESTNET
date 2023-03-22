@@ -2,86 +2,11 @@
 ```
 wget -O ununifi.sh https://raw.githubusercontent.com/Alfonova-Node/NODE_TESTNET/main/UNUNIFI/ununifi.sh && chmod +x ununifi.sh && ./ununifi.sh
 ```
-
-## Install last binary
-
-```bash
-git clone https://github.com/UnUniFi/chain ununifi
-cd ununifi
-git checkout v1.0.0-beta.4
-make install
-
+## Load variable ke system
 ```
-## Init the config files
-
-```bash
-ununifid init <moniker> --chain-id ununifi-beta-v1
-ununifid config chain-id ununifi-beta-v1
-```
-## Create a wallet and import
-```
-ununifid keys add <wallet_name>
-```
-```
-ununifid keys add <wallet_name> --recover
-```
-## Download genesis and addrbook
-```bash
-curl https://anode.team/UnUniFi/main/genesis.json > ~/.ununifi/config/genesis.json
-curl https://anode.team/UnUniFi/main/addrbook.json > ~/.ununifi/config/addrbook.json
-```
-## Add peers, seed
-```bash
-SEEDS="fa38d2a851de43d34d9602956cd907eb3942ae89@a.ununifi.cauchye.net:26656,404ea79bd31b1734caacced7a057d78ae5b60348@b.ununifi.cauchye.net:26656,1357ac5cd92b215b05253b25d78cf485dd899d55@[2600:1f1c:534:8f02:7bf:6b31:3702:2265]:26656,25006d6b85daeac2234bcb94dafaa73861b43ee3@[2600:1f1c:534:8f02:a407:b1c6:e8f5:94b]:26656,caf792ed396dd7e737574a030ae8eabe19ecdf5c@[2600:1f1c:534:8f02:b0a4:dbf6:e50b:d64e]:26656,796c62bb2af411c140cf24ddc409dff76d9d61cf@[2600:1f1c:534:8f02:ca0e:14e9:8e60:989e]:26656,cea8d05b6e01188cf6481c55b7d1bc2f31de0eed@[2600:1f1c:534:8f02:ba43:1f69:e23a:df6b]:26656"
-PEERS=""
-sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.ununifi/config/config.toml
-```
-## Add min gas
-```bash
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0025uguu\"/" $HOME/.ununifi/config/app.toml
-```
-## Create the service file
-```bash
-sudo tee /etc/systemd/system/ununifid.service > /dev/null <<EOF
-[Unit]
-Description=UnUniFi
-After=network-online.target
-
-[Service]
-User=$USER
-ExecStart=$(which ununifid) start
-Restart=always
-RestartSec=3
-LimitNOFILE=4096
-
-[Install]
-WantedBy=multi-user.target
-EOF
+source $HOME/.bash_profile
 ```
 
-## Load service and start
-```bash
-sudo systemctl daemon-reload && sudo systemctl enable ununifid
-sudo systemctl restart ununifid && journalctl -fu ununifid -o cat
-```
-## Create Validator
-```bash
-ununifid tx staking create-validator \
-  --amount=1000000uguu \
-  --pubkey=$(ununifid tendermint show-validator) \
-  --moniker="<moniker>" \
-  --identity="<identity>" \
-  --website="<website>" \
-  --details="<details>" \
-  --security-contact="<contact>" \
-  --chain-id="ununifi-beta-v1" \
-  --commission-rate="0.10" \
-  --commission-max-rate="0.20" \
-  --commission-max-change-rate="0.01" \
-  --min-self-delegation="1" \
-  --fees="500uguu" \
-  --from=<wallet_name>
-  ```
  ## State-Sync
 ```bash
 sudo systemctl stop ununifid
@@ -120,7 +45,97 @@ curl -L https://snapshot.ununifi.alfonova.app/ununifi/ununifi-snapshot-20230322.
 mv $HOME/.ununifi/priv_validator_state.json.backup $HOME/.ununifi/data/priv_validator_state.json && \
 sudo systemctl restart ununifid && journalctl -fu ununifid -o cat
 ```
+##  Informasi Node
+### cek sync node
+```
+ununifid status 2>&1 | jq .SyncInfo
+```
+### cek log node
+```
+journalctl -fu ununifid -o cat
+```
+### cek node info
+```
+ununifid status 2>&1 | jq .NodeInfo
+```
+### cek validator info
+```
+ununifid status 2>&1 | jq .ValidatorInfo
+```
+### cek node id
+```
+ununifid tendermint show-node-id
+```
+## Make Wallet
+### New Wallet
+```
+ununifid keys add $WALLET
+```
+## Recover Wallet
+```
+ununifid keys add $WALLET --recover
+```
+### List Wallet
+```
+ununifid keys list
+```
+## Delete Wallet
+```
+ununifid keys delete $WALLET
+```
+## Save Information Wallet
+```bash
+WALLET_ADDRESS=$(ununifid keys show $WALLET -a)
+ALOPER_ADDRESS=$(ununifid keys show $WALLET --bech val -a)
+echo 'export WALLET_ADDRESS='${WALLET_ADDRESS} >> $HOME/.bash_profile
+echo 'export VALOPER_ADDRESS='${VALOPER_ADDRESS} >> $HOME/.bash_profile
+source $HOME/.bash_profile
+```
+## Make Validator
 
+### Check Balance
+```
+ununifid query bank balances $WALLET_ADDRESS
+```
+### Create Validator
+```bash
+ununifid tx staking create-validator \
+  --amount=1000000uguu \
+  --pubkey=$(ununifid tendermint show-validator) \
+  --moniker $NODENAME \
+  --identity="<identity>" \
+  --website="<website>" \
+  --details="<details>" \
+  --security-contact="<contact>" \
+  --chain-id $CHAIN_ID \
+  --commission-rate="0.10" \
+  --commission-max-rate="0.20" \
+  --commission-max-change-rate="0.01" \
+  --min-self-delegation="1" \
+  --fees="500uguu" \
+  --from $WALLET
+  ```
+### Edit Validator
+```bash
+ununifid tx staking edit-validator \
+  --identity="<your_keybase_id>" \
+  --website="<your_website>" \
+  --details="<your_validator_description>" \
+  --chain-id CHAIN_ID \
+  --gas=auto \
+  --fees="500uguu" \
+  --gas-adjustment=1.2 \
+  ```
+### Unjail Validator
+```bash
+bonus-blockd tx slashing unjail \
+  --broadcast-mode=block \
+  --from $WALLET \
+  --chain-id HAIN_ID \
+  --fees="500uguu" \
+  --gas-adjustment=1.2 \
+  --gas=auto
+  ```
 ## Remove Node
 ```bash
 sudo systemctl stop ununifid && \
