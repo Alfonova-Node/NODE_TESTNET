@@ -128,7 +128,7 @@ ununifid tx staking edit-validator \
   ```
 ### Unjail Validator
 ```bash
-bonus-blockd tx slashing unjail \
+ununifid tx slashing unjail \
   --broadcast-mode=block \
   --from $WALLET \
   --chain-id HAIN_ID \
