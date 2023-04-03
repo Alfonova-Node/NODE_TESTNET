@@ -121,8 +121,6 @@ example "0xB0F9575AC688Ed5C37f50B3aF0d125664c2EA123" and "ALFONOVA"
   ```
   
 ## Running Other Consensus Layer
-Please edit <YOUR-ADDRESS>  <YOUR-ENR> And <YOUR-IP> 
- 
  ```
   nohup lighthouse \
 --testnet-dir $HOME/testnet/consensus \
