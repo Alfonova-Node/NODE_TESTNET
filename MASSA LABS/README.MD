@@ -1,4 +1,4 @@
-# Tutorial Praktis Testnet Berinsentif Massa! Episode 20
+# Tutorial Praktis Testnet Berinsentif Massa! Episode 21
 
 <p align="center">
   <img width="340" height="auto" src="https://pbs.twimg.com/profile_images/1580151744901824512/W_MD85bU_400x400.jpg">
@@ -21,7 +21,7 @@ ufw allow ssh
 ufw enable
 ```
 
-# UPDATE NODE MASSA 20.2
+# UPDATE NODE MASSA 21.0
 ```bash
 wget -O update-node.sh https://raw.githubusercontent.com/Alfonova-Node/NODE_TESTNET/main/MASSA%20LABS/update-node.sh && chmod +x update-node.sh && ./update-node.sh
 ```
