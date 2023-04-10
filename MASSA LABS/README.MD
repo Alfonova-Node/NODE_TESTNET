@@ -52,12 +52,14 @@ cd massa/massa-client
 ## Jika teman-teman merupakan pengguna baru atau baru pertama kali berpartisipasi di testnet Massa, anda harus membuat Wallet Massa terlebih dahulu dengan cara:
 
 `wallet_generate_secret_key`
+
 `wallet_info`
 
 ### Jangan lupa untuk menyimpan atau back up secret key, publik key dan addressnya.
 
 ## Jika teman-teman telah berpartisipasi di testnet Massa sebelumnya, anda cukup import walletnya dengan cara:
 `wallet_add_secret_keys <your_secret_key>`
+
 `wallet_info`
 
 ### Setelah informasi wallet address muncul, salin addressteman-teman dan kirimkan ke channel #testnet-faucet yang ada di discord Massa, untuk mendapatkan koin MAS.
