@@ -32,7 +32,7 @@ echo "_|-_|-_|-_|-_|-_|-_|"
 read Validator_Name
 echo "_|-_|-_|-_|-_|-_|-_|"
 echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
-echo export CHAIN_ID="altruistic-1" >> $HOME/.bash_profile
+echo export CHAIN_ID="circulus-1" >> $HOME/.bash_profile
 source ~/.bash_profile
 
 echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
@@ -53,10 +53,11 @@ go version
 
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
-cd $HOME && git clone https://github.com/empowerchain/empowerchain && \
-cd empowerchain/chain && \
-make install && \
-empowerd version --long | head
+git clone https://github.com/EmpowerPlastic/empowerchain
+cd empowerchain
+git checkout v1.0.0-rc2
+cd chain
+make install
 
 empowerd init $Validator_Name --chain-id $CHAIN_ID
 
