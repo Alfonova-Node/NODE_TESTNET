@@ -2,7 +2,7 @@
   <img height="400" height="auto" src="https://user-images.githubusercontent.com/44331529/193969092-38e7ec7f-bca0-4bd9-a31d-5ba52b71ec81.png">
 </p>
 
-# Empower testnet node setup — altruistic-1
+# Empower testnet node setup — circulus-1
 
 Official documentation:
 >- [Validator setup instructions](https://github.com/obajay/nodes-Guides/tree/main/Empower)
