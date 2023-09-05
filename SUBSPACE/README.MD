@@ -95,8 +95,9 @@ chmod +x subspace-*
 ```
 
 # Install screen
+```
 sudo apt-get install screen
-```screen -S subspace
+screen -S subspace
 Start ( Change address_reward with ur address)
 ./subspace-farmer farm --reward-address <address_reward> path=/root/.local/share/subspace-farmer,size=100G
 ```
