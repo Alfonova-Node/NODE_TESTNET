@@ -23,13 +23,14 @@ sudo apt update && sudo apt install curl -y
 sudo apt update && sudo apt install ocl-icd-opencl-dev libopencl-clang-dev libgomp1 -y
 ```
 
-```
+
 ## Vars Input Your_Nodename & Wallet_address
 ```
 NODENAME=<YOUR_NODENAME>
 WALLET_ADDRESS=<YOUR_WALLET_ADDRESS>
 PLOT_SIZE=100G
 ```
+
 ```
 ## Import
 ```
