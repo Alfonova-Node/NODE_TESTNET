@@ -24,13 +24,15 @@ sudo apt update && sudo apt install ocl-icd-opencl-dev libopencl-clang-dev libgo
 ```
 
 ```
-Vars Input Your_Nodename & Wallet_address
+## Vars Input Your_Nodename & Wallet_address
+```
 NODENAME=<YOUR_NODENAME>
 WALLET_ADDRESS=<YOUR_WALLET_ADDRESS>
 PLOT_SIZE=100G
 ```
 ```
-Import
+## Import
+```
 echo "export NODENAME=$NODENAME" >> $HOME/.bash_profile
 echo "export WALLET_ADDRESS=$WALLET_ADDRESS" >> $HOME/.bash_profile
 echo "export PLOT_SIZE=$PLOT_SIZE" >> $HOME/.bash_profile
