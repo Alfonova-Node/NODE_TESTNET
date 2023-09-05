@@ -1,1 +1,6 @@
+# Installing
+If you don’t already have an subspace wallet, follow step 2. Create wallet, then go to the next step.
+Use our script for a quick installation:
 
+
+```wget -O subspace.sh https://api.nodes.guru/subspace.sh && chmod +x subspace.sh && ./subspace.sh```
