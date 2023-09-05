@@ -31,8 +31,9 @@ WALLET_ADDRESS=<YOUR_WALLET_ADDRESS>
 PLOT_SIZE=100G
 ```
 
-```
+
 ## Import
+
 ```
 echo "export NODENAME=$NODENAME" >> $HOME/.bash_profile
 echo "export WALLET_ADDRESS=$WALLET_ADDRESS" >> $HOME/.bash_profile
