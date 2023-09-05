@@ -15,11 +15,11 @@ To create polkadot wallet:
 
 >- Download and install [Browser Extension](https://polkadot.js.org/extension)
 >- Navigate to [Subspace Explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3f.subspace.network%2Fws#/accounts) and press Add account button
+>- Save `mnemonic` and `create wallet`
+>- This will generate wallet address that you will have to use later. Example of wallet address: `st7QseTESMmUYcT5aftRJZ3jg357MsaAa93CFQL5UKsyGEk53`
 
-Save mnemonic and create wallet
-This will generate wallet address that you will have to use later. Example of wallet address: st7QseTESMmUYcT5aftRJZ3jg357MsaAa93CFQL5UKsyGEk53
-NODE
-Package
+## NODE
+## Package
 ```
 sudo apt update && sudo apt install curl -y
 sudo apt update && sudo apt install ocl-icd-opencl-dev libopencl-clang-dev libgomp1 -y
