@@ -32,7 +32,7 @@ sudo certbot certonly --manual --preferred-challenges dns --email email@company.
 - Maka akan muncul seperti gambar berikut :  
 
 ![Screenshot_2](https://i.ibb.co/yXvwW6Y/photo-2023-09-12-14-32-13.jpg)
-```
+
 TOLONG JANGAN LANGSUNG DI ENTER JIKA MUNCUL 
 SEPERTI INI UBAH DULU DATANYA  SEPERTI GAMBAR DNS TXT```
 
@@ -105,7 +105,9 @@ GRAPHQL_PORT=443
 START_HEIGHT=1000000
 ARNS_ROOT_HOST=sipalingtestnet.com
 ```
+
 - Jika sudah mengubah data diatas buka vps kembali lalu copy command berikut jika sudah jangan lupa tekan `CTRL+X` lalu `Y` lalu `ENTER` untuk keluar
+
 ```
 cd ~/ar-io-node
 nano .env
