@@ -28,7 +28,7 @@ b. Jika domain anda sudah di set ke cloudflare maka anda harus membuat DNS seper
 c. Membuat DNS TYPE TXT dengan cara copy command di bawah ini dan ganti dengan domain yang kalian miliki misal domain.com  rubah menjadi alfonova.online
 
 ```
-sudo certbot certonly --manual --preferred-challenges dns --email email@company.com -d domain.com -d '*.domain.com'
+sudo certbot certonly --manual --preferred-challenges dns --email email@company.com -d domain.com
 ````
 
 - Maka akan muncul seperti gambar berikut :  
