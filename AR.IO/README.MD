@@ -1,4 +1,3 @@
-
 <p align="center">
   <img height="350" height="auto" src="https://pbs.twimg.com/profile_images/1572943803945738241/uzvOMcMb_400x400.jpg">
 </p>
@@ -125,3 +124,5 @@ b. paste domain kamu https://domain.com/ar-io/info
 a. Export Wallet dengan cara masuk ke wallet yang telah di buat tadi lalu pergi ke pengaturan lalu pilih wallets lalu pilih `EXPORT WALLETS` janganlupa ubah nama filenya menjadi `key.json`
 
 ![Screenshot_3](https://i.ibb.co/rHH543v/spaces-z0v-OSDGNUtqq-Ex-Cr6pq-Y-uploads-j-MBCtw-Xgm-Jes-Gg-OR9-V2h-image.webp)
+
+
