@@ -134,4 +134,34 @@ a. Export Wallet dengan cara masuk ke wallet yang telah di buat tadi lalu pergi 
 
 ![Screenshot_3](https://i.ibb.co/rHH543v/spaces-z0v-OSDGNUtqq-Ex-Cr6pq-Y-uploads-j-MBCtw-Xgm-Jes-Gg-OR9-V2h-image.webp)
 
+#  Instal Contract
+
+```
+cd
+git clone https://github.com/ar-io/testnet-contract.git
+cd ~/testnet-contract
+yarn install
+yarn build
+```
+- Setelah selesai menginstall anda harus memindahkan wallet yang telah di import tadi ke folder `testnet-contract`
+
+# Menambakan Identity 
+a. Copy command berikut
+```
+nano tools/join-network.ts
+```
+
+![Screenshot_3](https://i.ibb.co/mJ6nG22/kokokok.jpg)
+
+- Ubah qty dari 100_000 Menjadi 10_000
+- Const label dari Parmagate menjadi Nickname andalan kamu
+- Const fqdn dari Parmagate.io menjadi domain yang kamu buat tadi
+- Const note dari Owned and operated by DTF. menjadi suka suka kamu
+
+
+# STAKE
+Copy command ini agar faucet yang di berikan akan di stake
+```
+yarn ts-node tools/join-network.ts
+```
 
