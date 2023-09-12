@@ -26,23 +26,25 @@ b. Jika domain anda sudah di set ke cloudflare maka anda harus membuat DNS seper
 - Buat DNS dengan TYPE A  DAN  NAME NYA * LALU VALUE(CONTENT) BERISI IP ADDRES VPS TEMAN TEMAN
 - Buat LAGI DNS dengan TYPE A  DAN  NAME NYA @ LALU VALUE(CONTENT) BERISI IP ADDRES VPS TEMAN TEMAN
 c. Membuat DNS TYPE TXT dengan cara copy command di bawah ini dan ganti dengan domain yang kalian miliki misal domain.com  rubah menjadi alfonova.online
+
 ```
 sudo certbot certonly --manual --preferred-challenges dns --email email@company.com -d domain.com -d '*.domain.com'
 ````
-- Maka akan muncul seperti gambar berikut :  
 
+- Maka akan muncul seperti gambar berikut :  
 ![Screenshot_2](https://i.ibb.co/yXvwW6Y/photo-2023-09-12-14-32-13.jpg)
 
 TOLONG JANGAN LANGSUNG DI ENTER JIKA MUNCUL 
-SEPERTI INI UBAH DULU DATANYA  SEPERTI GAMBAR DNS TXT```
+SEPERTI INI UBAH DULU DATANYA  SEPERTI GAMBAR DNS TXT
 
-- Pergi ke cloudflare lagi dan membuat dns baru dengan  TYPE TXT
+- Pergi ke cloudflare lagi dan membuat dns baru dengan  `TYPE TXT`
 
-- Name isi dengan yang di berikan di vps contoh  _acme-challenge.alfonova.online.  saya mengisi nya di name sedangkan content nya berisi jWG6n9c1iFvBsY4pJIoek-4RAZnfNqFFXXGwhyTujdQ
+- Name isi dengan yang di berikan di vps contoh `_acme-challenge.alfonova.online.`  saya mengisi nya di name sedangkan content nya berisi `jWG6n9c1iFvBsY4pJIoek-4RAZnfNqFFXXGwhyTujdQ`
 
 
 # Mendownload File Node
 Copy command di bawah ini lalu tunggu sampai download telah selesai jika sudah selesai teman teman buka folder yang telah kita download tadi
+
 ```
 git clone https://github.com/ar-io/ar-io-node.git
 cd ~/ar-io-node
@@ -50,14 +52,19 @@ cd ~/ar-io-node
 
 # Menyiapkan Nginx
 a. Pertama Hapus dulu page default nya dengan code sebagai berikut : 
+
 ```
 rm /etc/nginx/sites-available/default
 ```
+
 b. Selanjutnya membuat file baru dan mengisi file tersebut
+
 ```
 nano /etc/nginx/sites-available/default
 ```
+
 c. Selanjutnya mengisi file dengan script sebagai berikut :
+
 ```
 server {
     listen 80;
