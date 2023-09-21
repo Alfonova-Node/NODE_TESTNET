@@ -103,14 +103,15 @@ sudo nginx -t
 
 # Mengatur .env
 - Buka notepad lalu ubah data ini sesuai data anda:
-```
+
 AR_IO_WALLET= ADDRES WALLET YANG TELAH KITA BUAT DI LANGKAH PERTAMA
 ARNS_ROOT_HOST = domain yang telah kita setting tadi
+```
 AR_IO_WALLET=
 GRAPHQL_HOST=arweave.net
 GRAPHQL_PORT=443
 START_HEIGHT=1000000
-ARNS_ROOT_HOST=sipalingtestnet.com
+ARNS_ROOT_HOST=alfonova.app
 ```
 
 - Jika sudah mengubah data diatas buka vps kembali lalu copy command berikut jika sudah jangan lupa tekan `CTRL+X` lalu `Y` lalu `ENTER` untuk keluar
