@@ -103,9 +103,8 @@ sudo nginx -t
 
 # Mengatur .env
 - Buka notepad lalu ubah data ini sesuai data anda:
-
-AR_IO_WALLET= ADDRES WALLET YANG TELAH KITA BUAT DI LANGKAH PERTAMA
-ARNS_ROOT_HOST = domain yang telah kita setting tadi
+- AR_IO_WALLET= ADDRES WALLET YANG TELAH KITA BUAT DI LANGKAH PERTAMA
+- ARNS_ROOT_HOST = domain yang telah kita setting tadi
 
 ```
 AR_IO_WALLET=
