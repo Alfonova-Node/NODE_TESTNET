@@ -1,3 +1,5 @@
+## Install dependencies: Node.js, Docker, Git.
+
 Install NodeJS (v16 or newer), Git and Docker using your distro's package manager.
 
 ```
@@ -20,3 +22,9 @@ then configure NodeJS to use it
 ```
 npm config set prefix ~/global-node-packages
 ```
+Make sure that any executables globally installed by NodeJS are in `PATH`. That allows running them from any terminal. Open the `~/.bashrc` file in a text editor and add the following line at the end:
+
+```
+export PATH="${HOME}/global-node-packages/bin:$PATH"
+```
+
