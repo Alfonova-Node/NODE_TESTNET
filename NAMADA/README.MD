@@ -1,3 +1,6 @@
+![SCreenshot](https://github.com/cryptobtcbuyer/Testnet_guides/raw/main/Namada/assets/pr_cover.png)
+
+
 ## How to join as a pre-genesis validator in the Namada testnet\
 
 ## Hardware Requirements
