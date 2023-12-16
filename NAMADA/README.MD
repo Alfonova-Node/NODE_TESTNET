@@ -138,4 +138,16 @@ and hit "Commit changes" and after "Propose changes"
 ![Screenshot](https://github.com/cryptobtcbuyer/Testnet_guides/blob/main/Namada/assets/commit3.png)   
 
 Now create pull request
+
+![Screenshot](https://github.com/cryptobtcbuyer/Testnet_guides/raw/main/Namada/assets/pr2.png)
+
+![Screenshot](https://github.com/cryptobtcbuyer/Testnet_guides/raw/main/Namada/assets/open2.png)
+
+If your PR is not merged, you can run the post-genesis validator
+
+Remember, you must not need to be a genesis-validator in order to test the network effectively.
+
+Warning
+
+This guide is not enough for the successful launch of the validator node, it is intended only to submit a Pull Request.
                                                                           
