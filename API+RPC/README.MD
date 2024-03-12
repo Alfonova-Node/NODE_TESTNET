@@ -80,28 +80,6 @@ RPC_DOMAIN="YOUR_API_DOMAIN"
 RPC_IP_PORT="IP:PORT"
 ```
 
-- Set GRPC Domain
-```bash
-GRPC_DOMAIN="YOUR_GRPC_DOMAIN"
-```
-- set GRPC Port
-
-```bash
-GRPC_IP_PORT="IP:PORT"
-```
-
-- Set GRPC_WEB Domain
-
-```bash
-GRPC_WEB_DOMAIN="YOUR_GRPC_WEB_DOMAIN"
-```
-- set GRPC_WEB Port
-
-```bash
-GRPC_WEB_IP_PORT="IP:PORT"
-```
-
-
 ### Create Config
 
 ### Create API Config
@@ -152,52 +130,6 @@ server {
 }
 EOF
 ```
-### Create GRPC Config
-
-```bash
-sudo cat <<EOF > /etc/nginx/sites-enabled/${GRPC_DOMAIN}.conf
-server {
-    server_name $GRPC_DOMAIN;
-    listen 80;
-    location / {
-        add_header Access-Control-Allow-Origin *;
-        add_header Access-Control-Max-Age 3600;
-        add_header Access-Control-Expose-Headers Content-Length;
-
-	proxy_set_header   X-Real-IP        \$remote_addr;
-        proxy_set_header   X-Forwarded-For  \$proxy_add_x_forwarded_for;
-        proxy_set_header   Host             \$host;
-
-        proxy_pass http://$GRPC_IP_PORT;
-
-    }
-}
-EOF
-```
-
-### Create GRPC WEB Config
-
-```bash
-sudo cat <<EOF > /etc/nginx/sites-enabled/${GRPC_WEB_DOMAIN}.conf
-server {
-    server_name $GRPC_WEB_DOMAIN;
-    listen 80;
-    location / {
-        add_header Access-Control-Allow-Origin *;
-        add_header Access-Control-Max-Age 3600;
-        add_header Access-Control-Expose-Headers Content-Length;
-
-	proxy_set_header   X-Real-IP        \$remote_addr;
-        proxy_set_header   X-Forwarded-For  \$proxy_add_x_forwarded_for;
-        proxy_set_header   Host             \$host;
-
-        proxy_pass http://$GRPC_WEB_IP_PORT;
-
-    }
-}
-EOF
-```
-
 
 ### Config Test
 
@@ -217,5 +149,5 @@ Output if Succes
 
 ```bash
 sudo certbot --nginx --register-unsafely-without-email
-sudo certbot --nginx --redirect -d ${API_DOMAIN},${RPC_DOMAIN},${GRPC_DOMAIN},${GRPC_WEB_DOMAIN}
+sudo certbot --nginx --redirect -d ${API_DOMAIN},${RPC_DOMAIN}
 ```
